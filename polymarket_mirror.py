@@ -586,9 +586,20 @@ class PolymarketMirror:
                 else:
                     # Derive credentials (requires signing with private key)
                     try:
-                        creds = self.client.create_or_derive_api_creds()
-                        self.client.set_api_creds(creds)
-                        logger.info("Derived API credentials from private key")
+                        # 1. Try to create a new key explicitly
+                        try:
+                            creds = self.client.create_api_key()
+                            self.client.set_api_creds(creds)
+                            logger.info("Successfully created NEW API credentials")
+                        except Exception as create_error:
+                            # 2. IF it fails, PRINT THE ERROR so we know why
+                            logger.info(f"Creation failed (likely exists): {create_error}")
+                            
+                            # 3. Then fall back to deriving the existing one
+                            creds = self.client.derive_api_key()
+                            self.client.set_api_creds(creds)
+                            logger.info("Derived EXISTING API credentials")
+
                     except Exception as e:
                         logger.warning(f"Could not derive API credentials: {e}")
                         logger.warning("Trading may not work. Run: python setup_polymarket.py")
