@@ -1,85 +1,83 @@
 #!/usr/bin/env python3
 """
-Polymarket Mirror Bot (Ultimate Edition - Stable)
-----------------------------------------
-1. EXECUTION: Fill-Or-Kill (FOK). Orders fill immediately or are cancelled.
-2. POSITIVE SLIPPAGE: Buys cheaper than target if possible.
-3. CRASH GUARD: Skips trades if price drops >10% (avoids falling knives).
-4. SMART TOLERANCE: Only buys if price is within safe range (max +2% upside).
-5. RELIABLE: Enforces API minimums ($1.00 / 5 shares) and fixes iteration crashes.
+Polymarket Mirror Bot v4 (WebSocket Edition) - FIXED
+-----------------------------------------------------
+- WebSocket for INSTANT trade detection
+- Fallback to polling if WS disconnects
+- Thread-safe execution
 """
 
 import os
 import time
 import json
 import logging
-from decimal import Decimal
+import asyncio
+import threading
+from decimal import Decimal, ROUND_DOWN, ROUND_UP
 from dataclasses import dataclass
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
 import requests
-
-# --- CONFIGURATION ---
-BUY = "BUY"
-SELL = "SELL"
-CHAIN_ID = 137
-RPC_URL = "https://polygon-rpc.com"
-USDC_ADDRESS = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
-USDC_ABI = '[{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]'
-
-# Libraries Check
-try:
-    from web3 import Web3
-    from eth_account import Account
-    WEB3_AVAILABLE = True
-except ImportError:
-    WEB3_AVAILABLE = False
-    print("⚠️ Web3 not found. Run: pip install web3")
-
-try:
-    from py_clob_client.client import ClobClient
-    from py_clob_client.clob_types import OrderArgs, OrderType
-    CLOB_AVAILABLE = True
-except ImportError:
-    CLOB_AVAILABLE = False
-    print("⚠️ py_clob_client not found. Run: pip install py-clob-client")
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 load_dotenv()
 
-# --- SETTINGS ---
-TARGET_ADDRESS = os.getenv("TARGET_ADDRESS", "")
-PRIVATE_KEY = os.getenv("PRIVATE_KEY", "")
-FUNDER_ADDRESS = os.getenv("FUNDER_ADDRESS", "") # Optional proxy
-SIGNATURE_TYPE = int(os.getenv("SIGNATURE_TYPE", "1")) # 1=EOA, 2=Gnosis
-
-# Risk Management
-MAX_CAPITAL_USAGE = Decimal(os.getenv("MAX_CAPITAL_TO_USE", "5000"))
-MAX_BUY_PRICE = Decimal("0.95")     # Don't buy arb/wager > 95 cents
-
-# --- SMART TOLERANCE SETTINGS ---
-# Upside: Max 2 cents over target's price (Avoid chasing pumps)
-MAX_UPPER_SLIPPAGE = Decimal("0.02") 
-# Downside: Max 10 cents under target's price (Crash Guard)
-MAX_LOWER_SLIPPAGE = Decimal("0.10") 
-# --------------------------------
-
-# API Execution Limits
-MIN_TRADE_USD = Decimal("1.00")     # API enforces ~$1 min value
-MIN_SHARES_COUNT = Decimal("5.0")   # API often enforces 5 share min
-
-POLL_INTERVAL = 0.5
-POSITION_THRESHOLD = Decimal("0.0001")
-
-# Endpoints
+# --- CONSTANTS ---
+BUY = "BUY"
+SELL = "SELL"
+CHAIN_ID = 137
 POLYMARKET_API = "https://clob.polymarket.com"
 DATA_API = "https://data-api.polymarket.com"
+WS_MARKET_URL = "wss://ws-subscriptions-clob.polymarket.com/ws/market"
+
+# --- CONFIGURATION ---
+TARGET_ADDRESS = os.getenv("TARGET_ADDRESS", "").lower()
+PRIVATE_KEY = os.getenv("PRIVATE_KEY", "")
+FUNDER_ADDRESS = os.getenv("FUNDER_ADDRESS", "")
+SIGNATURE_TYPE = int(os.getenv("SIGNATURE_TYPE", "1"))
+
+# Risk
+MAX_CAPITAL_USAGE = Decimal(os.getenv("MAX_CAPITAL_TO_USE", "5000"))
+MAX_BUY_PRICE = Decimal(os.getenv("MAX_BUY_PRICE", "0.95"))
+MAX_POSITION_PCT = Decimal(os.getenv("MAX_POSITION_PCT", "0.25"))
+MAX_SLIPPAGE = Decimal(os.getenv("MAX_SLIPPAGE", "0.03"))
+
+# Execution
+MIN_TRADE_USD = Decimal(os.getenv("MIN_TRADE_USD", "1.00"))
+MIN_SHARES = Decimal(os.getenv("MIN_SHARES", "1.0"))
+
+# Speed
+POLL_INTERVAL = float(os.getenv("POLL_INTERVAL", "2.0"))
+BALANCE_REFRESH_SEC = int(os.getenv("BALANCE_REFRESH_SEC", "120"))
+USE_WEBSOCKET = os.getenv("USE_WEBSOCKET", "true").lower() == "true"
 
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
+    format='%(asctime)s.%(msecs)03d - %(levelname)s - %(message)s',
     datefmt='%H:%M:%S'
 )
 logger = logging.getLogger(__name__)
+
+# Imports
+try:
+    from py_clob_client.client import ClobClient
+    from py_clob_client.clob_types import (
+        OrderArgs, OrderType, BalanceAllowanceParams, AssetType
+    )
+    CLOB_AVAILABLE = True
+except ImportError:
+    logger.error("pip install py-clob-client")
+    CLOB_AVAILABLE = False
+
+try:
+    import websockets
+    WS_AVAILABLE = True
+except ImportError:
+    WS_AVAILABLE = False
+    logger.warning("pip install websockets - using polling only")
+
 
 @dataclass
 class Position:
@@ -88,300 +86,498 @@ class Position:
     outcome: str
     size: Decimal
     avg_price: Decimal
-    cur_price: Decimal  
+    cur_price: Decimal
     market_question: str
-    end_date: str
+    neg_risk: bool = False
+
 
 class PolymarketMirror:
-    def __init__(self, target_address: str, private_key: str):
-        self.target_address = target_address.lower() if target_address else ""
-        self.private_key = private_key
-        self.target_positions: dict[str, Position] = {} 
-        self.my_positions: dict[str, Position] = {} 
+    def __init__(self):
+        self.target_address = TARGET_ADDRESS
+        self.my_address = FUNDER_ADDRESS.lower() if FUNDER_ADDRESS else ""
+        
+        # State (protected by lock)
+        self._lock = threading.Lock()
+        self.target_positions: dict[str, Position] = {}
+        self.my_positions: dict[str, Position] = {}
         self.initialized = False
-        self.last_heartbeat = 0
         self.total_spent = Decimal(0)
+        self.ws_connected = False
         
-        # Web3 Setup (for reading USDC balance directly)
-        if WEB3_AVAILABLE:
-            self.w3 = Web3(Web3.HTTPProvider(RPC_URL))
-            self.usdc_contract = self.w3.eth.contract(address=USDC_ADDRESS, abi=USDC_ABI)
-        else:
-            self.w3 = None
-
-        # CLOB Client Setup (for trading)
-        if CLOB_AVAILABLE and private_key:
-            try:
-                funder = FUNDER_ADDRESS if FUNDER_ADDRESS else Account.from_key(private_key).address
-                self.my_address = funder.lower()
-                self.client = ClobClient(POLYMARKET_API, key=private_key, chain_id=CHAIN_ID, signature_type=SIGNATURE_TYPE, funder=funder)
-                try: self.client.set_api_creds(self.client.derive_api_key())
-                except: pass 
-                logger.info(f"✅ Client Initialized for: {self.my_address}")
-            except Exception as e:
-                logger.error(f"Client init error: {e}")
-                self.client = None
-                self.my_address = ""
-        else:
-            self.client = None
-            self.my_address = ""
-
-    def get_usdc_balance_web3(self, address: str) -> Decimal:
-        if not self.w3: return Decimal(0)
+        # Caches
+        self.market_cache: dict[str, dict] = {}
+        self.cached_my_cash = Decimal(0)
+        self.cached_target_value = Decimal(0)
+        self.last_balance_update = 0
+        self.last_poll = 0
+        
+        # HTTP Session
+        self.session = requests.Session()
+        adapter = HTTPAdapter(pool_connections=10, pool_maxsize=10)
+        self.session.mount('https://', adapter)
+        
+        # Thread pool
+        self.executor = ThreadPoolExecutor(max_workers=4)
+        
+        # CLOB Client
+        self.client = None
+        self._init_client()
+    
+    def _init_client(self):
+        if not CLOB_AVAILABLE or not PRIVATE_KEY:
+            return
         try:
-            raw = self.usdc_contract.functions.balanceOf(Web3.to_checksum_address(address)).call()
-            return Decimal(str(raw)) / Decimal("1000000")
-        except: return Decimal(0)
+            self.client = ClobClient(
+                host=POLYMARKET_API,
+                chain_id=CHAIN_ID,
+                key=PRIVATE_KEY,
+                signature_type=SIGNATURE_TYPE,
+                funder=FUNDER_ADDRESS if FUNDER_ADDRESS else None
+            )
+            creds = self.client.create_or_derive_api_creds()
+            self.client.set_api_creds(creds)
+            logger.info(f"✅ Client ready")
+        except Exception as e:
+            logger.error(f"Client init failed: {e}")
 
-    def get_all_positions(self, address: str) -> dict[str, Position]:
-        """Fetches active positions from Data API"""
-        pos_map = {}
-        today_str = datetime.now().strftime("%Y-%m-%d")
-        limit = 500 
-        offset = 0
+    def get_cash_balance(self) -> Decimal:
+        if not self.client:
+            return Decimal(0)
+        try:
+            params = BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
+            result = self.client.get_balance_allowance(params)
+            if result:
+                return Decimal(str(result.get("balance", 0))) / Decimal("1000000")
+        except Exception as e:
+            logger.debug(f"Balance error: {e}")
+        return Decimal(0)
+
+    def get_positions(self, address: str) -> dict[str, Position]:
+        positions = {}
+        try:
+            resp = self.session.get(
+                f"{DATA_API}/positions",
+                params={"user": address, "limit": 500},
+                timeout=5
+            )
+            if not resp.ok:
+                return positions
+            
+            for p in resp.json():
+                size = Decimal(str(p.get("size", 0)))
+                if size < Decimal("0.001"):
+                    continue
+                
+                token_id = p.get("asset") or p.get("asset_id")
+                if not token_id:
+                    continue
+                
+                cur_price = Decimal(str(p.get("curPrice", 0)))
+                avg_price = Decimal(str(p.get("avgPrice", 0)))
+                
+                positions[token_id] = Position(
+                    market_id=p.get("marketId", ""),
+                    token_id=token_id,
+                    outcome=p.get("outcome", ""),
+                    size=size,
+                    avg_price=avg_price,
+                    cur_price=cur_price if cur_price > 0 else avg_price,
+                    market_question=p.get("title", "")[:50],
+                    neg_risk=p.get("negRisk", False)
+                )
+        except Exception as e:
+            logger.error(f"Position fetch error: {e}")
+        return positions
+
+    def get_market_info(self, token_id: str) -> tuple[str, bool]:
+        if token_id in self.market_cache:
+            c = self.market_cache[token_id]
+            return c.get("tick_size", "0.01"), c.get("neg_risk", False)
         
-        while True:
-            try:
-                params = {"user": address, "limit": limit, "offset": offset} 
-                resp = requests.get(f"{DATA_API}/positions", params=params, timeout=5)
-                if not resp.ok: 
-                    # If 404/Empty, just break (new wallets might return empty)
-                    if resp.status_code == 404: break
-                    raise Exception(f"API Error {resp.status_code}")
-                
-                data = resp.json()
-                if not isinstance(data, list): break
-                if len(data) == 0: break
-                
-                for p in data:
-                    size = Decimal(str(p.get("size", 0)))
-                    if size < 0.001: continue
-                    
-                    # Filter expired markets
-                    end_date = p.get("endDate")
-                    if end_date and end_date < today_str: continue
+        try:
+            resp = self.session.get(
+                f"{DATA_API}/markets",
+                params={"clob_token_ids": token_id},
+                timeout=2
+            )
+            if resp.ok and resp.json():
+                m = resp.json()[0]
+                tick_size = m.get("minimum_tick_size", "0.01")
+                neg_risk = m.get("neg_risk", False)
+                self.market_cache[token_id] = {"tick_size": tick_size, "neg_risk": neg_risk}
+                return tick_size, neg_risk
+        except:
+            pass
+        return "0.01", False
 
-                    tid = p.get("asset") or p.get("asset_id") or p.get("tokenId")
-                    if not tid: continue
+    def place_order(self, token_id: str, side: str, size: Decimal, price: Decimal) -> bool:
+        if not self.client:
+            return False
+        
+        try:
+            tick_size, neg_risk = self.get_market_info(token_id)
+            tick = Decimal(tick_size)
+            
+            # FIX: Round UP for buys (higher price = more likely to fill)
+            #      Round DOWN for sells (lower price = more likely to fill)
+            if side == BUY:
+                price_rounded = float((price / tick).quantize(Decimal("1"), ROUND_UP) * tick)
+            else:
+                price_rounded = float((price / tick).quantize(Decimal("1"), ROUND_DOWN) * tick)
+            
+            size_rounded = float(size.quantize(Decimal("0.1"), ROUND_DOWN))
+            
+            if size_rounded < float(MIN_SHARES):
+                logger.debug(f"Size too small: {size_rounded}")
+                return False
+            
+            t_start = time.time()
+            logger.info(f"⚡ {side} {size_rounded:.1f} @ {price_rounded:.3f}")
+            
+            order_args = OrderArgs(
+                token_id=token_id,
+                price=price_rounded,
+                size=size_rounded,
+                side=BUY if side == BUY else SELL
+            )
+            
+            options = {"tick_size": tick_size, "neg_risk": neg_risk}
+            signed = self.client.create_order(order_args, options)
+            resp = self.client.post_order(signed, order_type=OrderType.FOK)
+            
+            latency = (time.time() - t_start) * 1000
+            
+            if resp:
+                success = resp.get("success") if isinstance(resp, dict) else getattr(resp, "success", False)
+                if success:
+                    logger.info(f"✅ Filled in {latency:.0f}ms")
+                    with self._lock:
+                        if side == BUY:
+                            spent = Decimal(str(size_rounded * price_rounded))
+                            self.total_spent += spent
+                            self.cached_my_cash -= spent
+                    return True
+                else:
+                    err = resp.get("errorMsg", str(resp)) if isinstance(resp, dict) else str(resp)
+                    logger.warning(f"❌ Rejected: {err[:60]}")
+            return False
+            
+        except Exception as e:
+            logger.error(f"Order error: {e}")
+            return False
+
+    def get_dynamic_slippage(self, usd_size: Decimal) -> Decimal:
+        """Dynamic slippage: more lenient for small positions, tighter for large."""
+        if usd_size < Decimal("50"):
+            return Decimal("0.08")   # 8% for tiny positions - just get in
+        elif usd_size < Decimal("150"):
+            return Decimal("0.06")   # 6%
+        elif usd_size < Decimal("300"):
+            return Decimal("0.05")   # 5%
+        elif usd_size < Decimal("500"):
+            return Decimal("0.04")   # 4%
+        else:
+            return Decimal("0.03")   # 3% for large positions - be careful
+
+    def handle_trade_signal(self, token_id: str, side: str, target_size: Decimal, target_price: Decimal):
+        """Process detected trade signal (runs in thread pool)."""
+        # FIX: Use cur_price as fallback if target_price is 0
+        if target_price <= 0:
+            with self._lock:
+                pos = self.target_positions.get(token_id)
+                if pos:
+                    target_price = pos.cur_price if pos.cur_price > 0 else pos.avg_price
+            if target_price <= 0:
+                logger.warning(f"No valid price for {token_id[:16]}")
+                return
+        
+        if side == BUY:
+            # Calculate our position size first to determine slippage
+            with self._lock:
+                my_cash = self.cached_my_cash
+                target_value = self.cached_target_value
+                current_spent = self.total_spent
+            
+            if target_value > 0:
+                ratio = my_cash / target_value
+            else:
+                ratio = Decimal("0.01")
+            
+            target_usd = target_size * target_price
+            my_usd = min(target_usd * ratio, my_cash * MAX_POSITION_PCT)
+            
+            # Dynamic slippage based on our position size
+            slippage = self.get_dynamic_slippage(my_usd)
+            
+            # Get current price to check slippage
+            with self._lock:
+                pos = self.target_positions.get(token_id)
+                cur_price = pos.cur_price if pos else target_price
+            
+            slippage_limit = target_price * (Decimal("1") + slippage)
+            if cur_price > slippage_limit:
+                logger.warning(f"⚠️ Slippage: {cur_price:.3f} > {slippage_limit:.3f} ({slippage*100:.0f}%)")
+                return
+            
+            if cur_price > MAX_BUY_PRICE:
+                logger.warning(f"⚠️ Price > {MAX_BUY_PRICE}")
+                return
+            
+            if my_usd < MIN_TRADE_USD:
+                logger.debug(f"Size too small: ${my_usd:.2f}")
+                return
+            
+            # Capital check
+            if current_spent + my_usd > MAX_CAPITAL_USAGE:
+                logger.warning(f"Capital limit reached: ${current_spent:.2f} + ${my_usd:.2f} > ${MAX_CAPITAL_USAGE}")
+                return
+            
+            # Use dynamic slippage for limit price
+            limit_price = min(target_price * (Decimal("1") + slippage), MAX_BUY_PRICE)
+            shares = my_usd / limit_price
+            
+            logger.info(f"   → Size: ${my_usd:.2f} | Slippage: {slippage*100:.0f}% | Limit: {limit_price:.3f}")
+            self.place_order(token_id, BUY, shares, limit_price)
+        
+        else:  # SELL
+            my_pos = self.my_positions.get(token_id)
+            if not my_pos or my_pos.size <= 0:
+                # Refresh and check again
+                self.my_positions = self.get_positions(self.my_address)
+                my_pos = self.my_positions.get(token_id)
+                if not my_pos or my_pos.size <= 0:
+                    logger.debug(f"We don't own {token_id[:16]}")
+                    return
+            
+            to_sell = min(target_size, my_pos.size)
+            sell_price = target_price * Decimal("0.95")
+            
+            if sell_price > 0:
+                self.place_order(token_id, SELL, to_sell, sell_price)
+
+    def refresh_state(self):
+        with self._lock:
+            self.cached_my_cash = self.get_cash_balance()
+            self.cached_target_value = sum(
+                p.size * (p.cur_price if p.cur_price > 0 else p.avg_price)
+                for p in self.target_positions.values()
+            )
+            self.last_balance_update = time.time()
+            logger.info(f"💰 Cash: ${self.cached_my_cash:.2f} | Target: ${self.cached_target_value:.2f}")
+
+    def poll_once(self):
+        """Single poll iteration."""
+        if time.time() - self.last_balance_update > BALANCE_REFRESH_SEC:
+            self.refresh_state()
+        
+        current = self.get_positions(self.target_address)
+        
+        with self._lock:
+            if not self.initialized:
+                self.target_positions = current
+                self.my_positions = self.get_positions(self.my_address)
+                self.initialized = True
+                logger.info(f"📍 Tracking {len(current)} positions")
+                self.last_poll = time.time()
+                # Refresh after init to get proper target value
+                self.refresh_state()
+                return
+            
+            # Detect buys
+            for tid, pos in current.items():
+                prev = self.target_positions.get(tid)
+                prev_size = prev.size if prev else Decimal(0)
+                
+                if pos.size > prev_size + Decimal("0.01"):
+                    delta = pos.size - prev_size
+                    # FIX: Use cur_price if avg_price is 0
+                    entry_price = pos.avg_price if pos.avg_price > 0 else pos.cur_price
+                    logger.info(f"🔔 BUY: {pos.market_question} (+{delta:.1f} @ {entry_price:.3f})")
+                    self.executor.submit(
+                        self.handle_trade_signal, tid, BUY, delta, entry_price
+                    )
+                    self.target_positions[tid] = pos
+            
+            # Detect sells
+            for tid in list(self.target_positions.keys()):
+                prev = self.target_positions[tid]
+                curr = current.get(tid)
+                curr_size = curr.size if curr else Decimal(0)
+                
+                if curr_size < prev.size - Decimal("0.01"):
+                    delta = prev.size - curr_size
+                    logger.info(f"🔔 SELL: {prev.market_question} (-{delta:.1f})")
+                    self.executor.submit(
+                        self.handle_trade_signal, tid, SELL, delta, prev.cur_price
+                    )
                     
-                    pos_map[tid] = Position(
-                        market_id=p.get("marketId", ""),
-                        token_id=tid,
-                        outcome=p.get("outcome", ""),
-                        size=size,
-                        avg_price=Decimal(str(p.get("avgPrice", 0))),
-                        cur_price=Decimal(str(p.get("curPrice", 0))),
-                        market_question=p.get("title") or p.get("question", "Unknown"),
-                        end_date=end_date or ""
+                    if curr:
+                        self.target_positions[tid] = curr
+                    else:
+                        del self.target_positions[tid]
+            
+            # Track new positions
+            for tid, pos in current.items():
+                if tid not in self.target_positions:
+                    self.target_positions[tid] = pos
+            
+            self.last_poll = time.time()
+
+    async def ws_subscribe(self):
+        """Subscribe to market trades via WebSocket."""
+        if not WS_AVAILABLE:
+            return
+        
+        while True:  # Reconnect loop
+            try:
+                with self._lock:
+                    token_ids = list(self.target_positions.keys())
+                
+                if not token_ids:
+                    await asyncio.sleep(5)
+                    continue
+                
+                logger.info(f"🔌 Connecting WebSocket...")
+                
+                async with websockets.connect(
+                    WS_MARKET_URL,
+                    ping_interval=30,
+                    ping_timeout=10
+                ) as ws:
+                    self.ws_connected = True
+                    
+                    # Subscribe to all markets in ONE message
+                    subscription = {
+                        "assets_ids": token_ids[:50],
+                        "type": "market"
+                    }
+                    await ws.send(json.dumps(subscription))
+                    
+                    logger.info(f"✅ WS connected, watching {min(len(token_ids), 50)} markets")
+                    
+                    async for message in ws:
+                        try:
+                            # Skip empty messages
+                            if not message or not message.strip():
+                                continue
+                            
+                            data = json.loads(message)
+                            
+                            # Handle different response types
+                            if isinstance(data, list) and len(data) > 0:
+                                # Non-empty list = something happened
+                                logger.debug(f"WS activity: {len(data)} events")
+                                await asyncio.get_event_loop().run_in_executor(
+                                    self.executor, self.poll_once
+                                )
+                            elif isinstance(data, dict) and data:
+                                # Non-empty dict = something happened
+                                event_type = data.get("event_type", "unknown")
+                                logger.debug(f"WS event: {event_type}")
+                                await asyncio.get_event_loop().run_in_executor(
+                                    self.executor, self.poll_once
+                                )
+                            # Empty [] or {} = subscription confirmation, ignore
+                        except json.JSONDecodeError:
+                            # Not JSON, ignore
+                            pass
+                        except Exception as e:
+                            logger.debug(f"WS parse error: {e}")
+                            
+            except websockets.exceptions.ConnectionClosed:
+                logger.warning("WS disconnected, reconnecting...")
+            except Exception as e:
+                logger.warning(f"WS error: {e}")
+            
+            self.ws_connected = False
+            await asyncio.sleep(3)  # Wait before reconnect
+
+    async def run_async(self):
+        """Run with WebSocket + polling."""
+        # Initial poll
+        self.poll_once()
+        
+        # Start WebSocket task
+        ws_task = asyncio.create_task(self.ws_subscribe())
+        
+        last_heartbeat = 0
+        
+        try:
+            while True:
+                # Backup polling (less frequent when WS connected)
+                poll_interval = POLL_INTERVAL * 3 if self.ws_connected else POLL_INTERVAL
+                
+                if time.time() - self.last_poll > poll_interval:
+                    await asyncio.get_event_loop().run_in_executor(
+                        self.executor, self.poll_once
                     )
                 
-                if len(data) < limit: break
-                offset += limit
+                # Heartbeat
+                if time.time() - last_heartbeat > 60:
+                    with self._lock:
+                        pos_count = len(self.target_positions)
+                        spent = self.total_spent
+                    status = "WS" if self.ws_connected else "Poll"
+                    logger.info(f"💓 [{status}] Positions: {pos_count} | Spent: ${spent:.2f}")
+                    last_heartbeat = time.time()
                 
-            except Exception as e:
-                logger.error(f"Fetch Error: {e}")
-                # Don't crash loop on read error
-                break
-        return pos_map
-
-    def get_portfolio_equity(self, address: str, positions: dict = None) -> Decimal:
-        cash = self.get_usdc_balance_web3(address)
-        if positions is None:
-            try: positions = self.get_all_positions(address)
-            except: positions = {}
-        pos_val = sum(p.size * (p.cur_price if p.cur_price > 0 else p.avg_price) for p in positions.values())
-        return cash + pos_val
-
-    def get_my_cash(self) -> Decimal:
-        if self.client:
-            try: return Decimal(self.client.get_balance_allowance(asset_type="COLLATERAL")['balance']) / Decimal("1000000")
-            except: pass
-        return self.get_usdc_balance_web3(Account.from_key(self.private_key).address)
-
-    def place_trade(self, token_id: str, size: Decimal, side: str, limit_price: Decimal) -> bool:
-        """Executes a Fill-Or-Kill (FOK) order with force minimums."""
-        if not self.client: return False
-        if self.total_spent >= MAX_CAPITAL_USAGE and side == BUY:
-            logger.warning(f"🛑 Max capital limit reached. Skipping.")
-            return False
-
-        try:
-            price = float(limit_price)
-            if price <= 0: return False
-
-            if side == BUY and price > float(MAX_BUY_PRICE):
-                logger.info(f"🚫 Price {price:.3f} > Safety Cap. Skipping.")
-                return False
-
-            # --- FORCE MINIMUMS (API Compliance) ---
-            # 1. Enforce Share Count Minimum
-            safe_size = max(float(size), float(MIN_SHARES_COUNT))
-            
-            # 2. Enforce USD Value Minimum ($1.00)
-            usd_value = safe_size * price
-            if usd_value < float(MIN_TRADE_USD):
-                safe_size = float(MIN_TRADE_USD) / price
-                safe_size = max(safe_size, float(MIN_SHARES_COUNT))
-
-            # 3. Rounding (Crucial for FOK orders to not fail)
-            safe_size = round(safe_size, 2)
-            
-            logger.info(f"🚀 EXECUTING FOK {side}: {safe_size} shares @ Limit {price:.3f} (${safe_size*price:.2f})")
-            
-            # --- EXECUTION: FILL OR KILL ---
-            order_args = OrderArgs(
-                price=price, 
-                size=safe_size, 
-                side=side, 
-                token_id=token_id
-            )
-            # Sign the order
-            signed_order = self.client.create_order(order_args)
-            
-            # Post as FOK (Immediate fill or cancel)
-            # FIX: correct arg is orderType (camelCase)
-            resp = self.client.post_order(signed_order, orderType=OrderType.FOK)
-            
-            logger.info(f"✅ Trade Response: {resp}")
-            
-            if side == BUY:
-                self.total_spent += Decimal(safe_size) * Decimal(price)
-            return True
-
-        except Exception as e:
-            logger.error(f"Trade Failed (Likely FOK Killed or API Error): {e}")
-            return False
-
-    def sync_positions(self):
-        """Core Logic: Monitors target, applies Smart Tolerance, executes trades."""
-        current_positions = self.get_all_positions(self.target_address)
-        
-        # Load my positions if needed for selling logic
-        if self.my_address:
-            try: self.my_positions = self.get_all_positions(self.my_address)
-            except: pass
-
-        # Initialization Phase
-        if not self.initialized:
-            self.target_positions = current_positions
-            self.initialized = True
-            logger.info(f"📍 Baseline set. Monitoring {len(current_positions)} ACTIVE positions.")
-            return
-
-        target_equity = Decimal(0)
-
-        # --- CHECK FOR BUYS (Target Increased Size) ---
-        for tid, curr_pos in current_positions.items():
-            prev_pos = self.target_positions.get(tid)
-            prev_size = prev_pos.size if prev_pos else Decimal(0)
-            
-            if curr_pos.size > prev_size + POSITION_THRESHOLD:
-                delta = curr_pos.size - prev_size
+                await asyncio.sleep(0.1)
                 
-                # Lazy load equity only if we are trading
-                if target_equity == 0: 
-                    target_equity = self.get_portfolio_equity(self.target_address, current_positions)
-                
-                # Get Target's Entry Price
-                target_entry = curr_pos.avg_price
-                if target_entry <= 0: target_entry = curr_pos.cur_price
-
-                # Get Current Market Price
-                curr_price = curr_pos.cur_price
-                
-                logger.info(f"🔔 Target INCREASED {curr_pos.market_question[:30]}... by {delta:.2f} @ {target_entry:.2f}")
-
-                # --- ASYMMETRIC SMART TOLERANCE ---
-                # Range: [Target - 10c] <----> [Target + 2c]
-                
-                if target_entry > 0:
-                    # 1. UPSIDE CHECK (Don't chase pumps)
-                    if curr_price > target_entry + MAX_UPPER_SLIPPAGE:
-                         logger.warning(f"⚠️ SKIPPED: Too Expensive (+{curr_price - target_entry:.2f}). Target: {target_entry:.2f}, Market: {curr_price:.2f}")
-                         self.target_positions[tid] = curr_pos
-                         continue
-
-                    # 2. DOWNSIDE CRASH GUARD (Don't catch falling knives)
-                    if curr_price < target_entry - MAX_LOWER_SLIPPAGE:
-                         logger.warning(f"⚠️ SKIPPED: Price Crashed (-{target_entry - curr_price:.2f}). Target: {target_entry:.2f}, Market: {curr_price:.2f}. (Toxic flow?)")
-                         self.target_positions[tid] = curr_pos
-                         continue
-
-                    # 3. POSITIVE SLIPPAGE LOG
-                    if curr_price < target_entry:
-                        logger.info(f"💎 POSITIVE SLIPPAGE: Buying @ {curr_price:.2f} (Target paid {target_entry:.2f})")
-
-                    # 4. CALCULATE SIZE & EXECUTE
-                    my_cash = self.get_my_cash()
-                    ratio = (my_cash / target_equity) if target_equity > 0 else 0
-                    
-                    # Target's spend on this chunk
-                    target_spend_usd = delta * target_entry 
-                    my_usd_size = target_spend_usd * ratio
-                    
-                    # Limit Price: Set to Upper Limit to ensure fill, but get best price
-                    limit_price = target_entry + MAX_UPPER_SLIPPAGE
-                    
-                    # Calculate shares based on LIMIT price (conservative) to ensure we have cash
-                    if limit_price > 0:
-                        shares_to_buy = my_usd_size / limit_price
-                        self.place_trade(tid, shares_to_buy, BUY, limit_price=limit_price)
-                else:
-                    logger.warning("No valid price found, skipping.")
-
-                self.target_positions[tid] = curr_pos
-
-        # --- CHECK FOR SELLS (Target Decreased Size) ---
-        # FIX: Iterate over a list of keys to prevent "dictionary changed size" error
-        for tid in list(self.target_positions.keys()):
-            prev_pos = self.target_positions[tid]
-            curr_pos = current_positions.get(tid)
-            curr_size = curr_pos.size if curr_pos else Decimal(0)
-            
-            if curr_size < prev_pos.size - POSITION_THRESHOLD:
-                delta = prev_pos.size - curr_size
-                logger.info(f"🔔 Target SOLD {prev_pos.market_question[:30]}... ({delta:.2f})")
-                
-                # Copy Sell Logic: We simply mirror the sell immediately
-                if tid in self.my_positions and self.my_positions[tid].size > 0:
-                    to_sell = min(delta, self.my_positions[tid].size)
-                    
-                    price = prev_pos.cur_price
-                    if price > 0:
-                        # Aggressive limit for SELL to ensure we exit
-                        sell_price = price * Decimal("0.90") 
-                        self.place_trade(tid, to_sell, SELL, limit_price=sell_price)
-                
-                if curr_pos: 
-                    self.target_positions[tid] = curr_pos
-                else: 
-                    del self.target_positions[tid]
-
-        # Handle New Positions
-        for tid, curr_pos in current_positions.items():
-            if tid not in self.target_positions:
-                self.target_positions[tid] = curr_pos
-
-        # Heartbeat
-        if time.time() - self.last_heartbeat > 10:
-            logger.info(f"💓 Scanning... (Tracked: {len(current_positions)})")
-            self.last_heartbeat = time.time()
+        except asyncio.CancelledError:
+            pass
+        finally:
+            ws_task.cancel()
+            try:
+                await ws_task
+            except asyncio.CancelledError:
+                pass
 
     def run(self):
-        logger.info(f"🤖 Bot Started (FOK + SMART TOLERANCE MODE)")
-        logger.info(f"Target: {self.target_address}")
-        logger.info(f"Slippage: Max +{MAX_UPPER_SLIPPAGE} (Chase) / Max -{MAX_LOWER_SLIPPAGE} (Crash Guard)")
+        """Main entry point."""
+        logger.info("=" * 50)
+        logger.info("⚡ Mirror Bot v4 (Fixed)")
+        logger.info(f"   Target: {self.target_address}")
+        logger.info(f"   My address: {self.my_address}")
+        logger.info(f"   WebSocket: {'Enabled' if USE_WEBSOCKET and WS_AVAILABLE else 'Disabled'}")
+        logger.info(f"   Poll interval: {POLL_INTERVAL}s")
+        logger.info(f"   Max capital: ${MAX_CAPITAL_USAGE}")
+        logger.info(f"   Max slippage: {MAX_SLIPPAGE*100:.0f}%")
+        logger.info("=" * 50)
         
-        while True:
-            try: self.sync_positions()
-            except Exception as e: 
-                logger.error(f"Loop Error: {e}")
-                time.sleep(1)
-            time.sleep(POLL_INTERVAL)
+        try:
+            if USE_WEBSOCKET and WS_AVAILABLE:
+                asyncio.run(self.run_async())
+            else:
+                # Polling only
+                last_heartbeat = 0
+                while True:
+                    self.poll_once()
+                    
+                    if time.time() - last_heartbeat > 60:
+                        with self._lock:
+                            pos_count = len(self.target_positions)
+                            spent = self.total_spent
+                        logger.info(f"💓 [Poll] Positions: {pos_count} | Spent: ${spent:.2f}")
+                        last_heartbeat = time.time()
+                    
+                    time.sleep(POLL_INTERVAL)
+        except KeyboardInterrupt:
+            logger.info("Shutting down...")
+            self.executor.shutdown(wait=False)
+
 
 if __name__ == "__main__":
-    if not PRIVATE_KEY or not TARGET_ADDRESS:
-        print("❌ Error: Please set PRIVATE_KEY and TARGET_ADDRESS in .env file")
-    else:
-        bot = PolymarketMirror(TARGET_ADDRESS, PRIVATE_KEY)
-        bot.run()
+    missing = []
+    if not PRIVATE_KEY:
+        missing.append("PRIVATE_KEY")
+    if not TARGET_ADDRESS:
+        missing.append("TARGET_ADDRESS")
+    if not FUNDER_ADDRESS:
+        missing.append("FUNDER_ADDRESS")
+    
+    if missing:
+        print(f"❌ Missing in .env: {', '.join(missing)}")
+        exit(1)
+    
+    bot = PolymarketMirror()
+    bot.run()
