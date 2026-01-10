@@ -1,110 +1,210 @@
 #!/usr/bin/env python3
-"""
-Full WebSocket debug - see if trades actually come through.
-Run this + watch_target.py side by side.
+"""Polymarket Walk Capture - Fire & Forget
+Place BUY YES @ 49% + BUY NO @ 49%
+If both fill: guaranteed 2% profit at resolution
+If one fills: 50/50 gamble
 """
 
-import asyncio
-import json
 import os
 import time
-from datetime import datetime
-from dotenv import load_dotenv
 import requests
+import logging
+from datetime import datetime, timezone, timedelta
+from dotenv import load_dotenv
+from py_clob_client.client import ClobClient
+from py_clob_client.clob_types import OrderArgs, OrderType
 
 load_dotenv()
 
-try:
-    import websockets
-except ImportError:
-    print("pip install websockets")
-    exit(1)
+BID = 0.49
+SIZE = 5.0
+HOURS_AHEAD = 4  # How far ahead to place orders
 
-TARGET = os.getenv("TARGET_ADDRESS", "").lower()
-WS_URL = "wss://ws-subscriptions-clob.polymarket.com/ws/market"
+KEY = os.getenv("PRIVATE_KEY")
+FUNDER = os.getenv("FUNDER_ADDRESS")
+SIG_TYPE = int(os.getenv("SIGNATURE_TYPE", "1"))
+GAMMA = "https://gamma-api.polymarket.com"
 
-async def main():
-    print(f"Target: {TARGET}")
-    print(f"WS URL: {WS_URL}")
-    print("=" * 60)
+ASSETS = ["btc", "eth", "sol", "xrp"]
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s | %(message)s', datefmt='%H:%M:%S')
+for x in ["urllib3", "httpcore", "httpx", "hpack"]: logging.getLogger(x).setLevel(logging.WARNING)
+log = logging.getLogger(__name__)
+
+
+def gen_slugs(hours=4):
+    """Generate 15-min market slugs (ET-aligned)"""
+    # Markets are aligned to ET (Eastern Time)
+    et = timezone(timedelta(hours=-5))  # EST (adjust to -4 for EDT)
+    now_et = datetime.now(et)
     
-    # Get target's tokens
-    r = requests.get(f"https://data-api.polymarket.com/positions?user={TARGET}&limit=50")
-    positions = r.json()
-    token_ids = [p.get("asset") for p in positions if p.get("asset")]
+    # Round up to next 15-min boundary in ET
+    mins = (now_et.minute // 15 + 1) * 15
+    if mins >= 60:
+        start = now_et.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1)
+    else:
+        start = now_et.replace(minute=mins, second=0, microsecond=0)
     
-    print(f"Target has {len(positions)} positions")
-    print(f"Subscribing to {len(token_ids)} token IDs")
-    print("=" * 60)
+    slugs = []
+    for i in range(hours * 4):
+        end_time = start + timedelta(minutes=15 * i)
+        ts = int(end_time.timestamp())
+        for asset in ASSETS:
+            slugs.append(f"{asset}-updown-15m-{ts}")
     
-    async with websockets.connect(WS_URL, ping_interval=30) as ws:
-        # Subscribe
-        sub = {"assets_ids": token_ids, "type": "market"}
-        await ws.send(json.dumps(sub))
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] ✅ Subscribed to market channel")
-        print("=" * 60)
-        print("LISTENING FOR ALL MESSAGES...")
-        print("Open another terminal and run: python watch_target.py")
-        print("When watch_target.py shows a trade, check if WS shows anything")
-        print("=" * 60)
+    log.info("First slot: %s ET (ts=%d)", start.strftime("%H:%M"), int(start.timestamp()))
+    return slugs
+
+
+class Bot:
+    def __init__(self):
+        self.c = ClobClient("https://clob.polymarket.com", key=KEY, chain_id=137, funder=FUNDER, signature_type=SIG_TYPE)
+        self.c.set_api_creds(self.c.create_or_derive_api_creds())
+
+    def load(self, slug):
+        """Load market from slug"""
+        slug = slug.strip().rstrip('/').split('/')[-1]
         
-        msg_count = 0
-        empty_count = 0
-        start_time = time.time()
+        r = requests.get(f"{GAMMA}/events?slug={slug}", timeout=10)
+        if r.ok and r.json():
+            e = r.json()[0]
+            m = e.get("markets", [{}])[0]
+            cid, q, end = m.get("conditionId"), m.get("question") or e.get("title"), m.get("endDate") or e.get("endDate")
+        else:
+            r = requests.get(f"{GAMMA}/markets?slug={slug}", timeout=10)
+            if not r.ok or not r.json(): return None
+            m = r.json()[0]
+            cid, q, end = m.get("conditionId"), m.get("question"), m.get("endDate")
         
-        while True:
-            try:
-                msg = await asyncio.wait_for(ws.recv(), timeout=1)
-                msg_count += 1
-                
-                # Parse
-                content = msg.strip()
-                
-                if content == "[]" or content == "":
-                    empty_count += 1
-                    # Only log every 10th empty
-                    if empty_count % 10 == 1:
-                        print(f"[{datetime.now().strftime('%H:%M:%S')}] Empty messages: {empty_count}")
-                    continue
-                
-                # NON-EMPTY MESSAGE - this is what we want!
-                print(f"\n{'🔥' * 20}")
-                print(f"[{datetime.now().strftime('%H:%M:%S')}] MESSAGE #{msg_count}")
-                print(f"{'🔥' * 20}")
-                
-                try:
-                    data = json.loads(content)
-                    print(f"Type: {type(data).__name__}")
-                    
-                    if isinstance(data, list):
-                        print(f"List length: {len(data)}")
-                        for i, item in enumerate(data):
-                            print(f"\n  Item {i}:")
-                            if isinstance(item, dict):
-                                for k, v in item.items():
-                                    print(f"    {k}: {str(v)[:80]}")
-                            else:
-                                print(f"    {item}")
-                    elif isinstance(data, dict):
-                        for k, v in data.items():
-                            print(f"  {k}: {str(v)[:100]}")
-                    else:
-                        print(f"  {data}")
-                        
-                except json.JSONDecodeError:
-                    print(f"Raw (not JSON): {content[:200]}")
-                
-                print()
-                    
-            except asyncio.TimeoutError:
-                elapsed = int(time.time() - start_time)
-                if elapsed % 10 == 0:  # Every 10 seconds
-                    print(f"[{datetime.now().strftime('%H:%M:%S')}] Waiting... ({elapsed}s, {msg_count} msgs, {empty_count} empty)")
+        if isinstance(end, str):
+            end = int(datetime.fromisoformat(end.replace('Z', '+00:00')).timestamp() * 1000)
+        
+        r = requests.get(f"https://clob.polymarket.com/markets/{cid}", timeout=10)
+        if not r.ok: return None
+        
+        t = r.json().get("tokens", [])
+        yes = next((x["token_id"] for x in t if x.get("outcome") == "Yes"), t[0]["token_id"] if t else None)
+        no = next((x["token_id"] for x in t if x.get("outcome") == "No"), t[1]["token_id"] if len(t) > 1 else None)
+        
+        return {"yes": yes, "no": no, "end": end, "q": q} if yes and no else None
+
+    def place(self, m):
+        """Place both buy orders"""
+        tag = m["q"].replace("Up or Down", "").replace("January", "").split("-")[0].strip()[:12]
+        mins = int((m["end"]/1000 - datetime.now(timezone.utc).timestamp()) / 60)
+        sz = max(5.0, SIZE / BID)
+        
+        placed = []
+        
+        try:
+            yr = self.c.post_order(self.c.create_order(OrderArgs(token_id=str(m["yes"]), price=BID, size=sz, side="BUY")), orderType=OrderType.GTC)
+            if yr.get("success"):
+                placed.append("Y")
+        except Exception as e:
+            log.error("[%s] Y err: %s", tag, e)
+        
+        try:
+            nr = self.c.post_order(self.c.create_order(OrderArgs(token_id=str(m["no"]), price=BID, size=sz, side="BUY")), orderType=OrderType.GTC)
+            if nr.get("success"):
+                placed.append("N")
+        except Exception as e:
+            log.error("[%s] N err: %s", tag, e)
+        
+        if placed:
+            log.info("[%s] ✓ %s (%dm)", tag, "+".join(placed), mins)
+        else:
+            log.info("[%s] ✗ Failed", tag)
+        
+        return len(placed)
+
 
 if __name__ == "__main__":
-    print("WebSocket Market Channel Test")
-    print("=" * 60)
+    import sys
+    
+    # Debug mode - show generated slugs
+    if "--debug" in sys.argv:
+        slugs = gen_slugs(hours=2)
+        log.info("Generated %d slugs:", len(slugs))
+        for s in slugs[:8]:  # First 2 slots
+            log.info("  %s", s)
+        exit(0)
+    
+    bot = Bot()
+    
+    # Discover markets
+    log.info("🔍 Discovering...")
+    
+    markets = []
+    seen = set()
+    
+    # 15-min markets
+    slugs_15m = gen_slugs(hours=HOURS_AHEAD)
+    log.info("Checking %d 15-min slots (%dh ahead)...", len(slugs_15m), HOURS_AHEAD)
+    for slug in slugs_15m:
+        m = bot.load(slug)
+        if m:
+            key = (m["yes"], m["no"])
+            if key not in seen:
+                seen.add(key)
+                m["type"] = "15m"
+                markets.append(m)
+    
+    # Hourly markets from API
+    log.info("Checking hourly markets...")
     try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        print("\nStopped")
+        r = requests.get(f"{GAMMA}/events", params={"active": "true", "closed": "false", "limit": 200}, timeout=15)
+        if r.ok:
+            for e in r.json():
+                s = e.get("slug", "")
+                if "up-or-down" in s.lower():
+                    m = bot.load(s)
+                    if m:
+                        key = (m["yes"], m["no"])
+                        if key not in seen:
+                            seen.add(key)
+                            m["type"] = "1h"
+                            markets.append(m)
+    except Exception as ex:
+        log.error("Hourly fetch failed: %s", ex)
+    
+    # Filter and sort
+    now = int(datetime.now(timezone.utc).timestamp() * 1000)
+    markets = [m for m in markets if m["end"] - now > 180000]  # 3+ min left
+    markets.sort(key=lambda x: x["end"])
+    
+    # Count types
+    count_15m = sum(1 for m in markets if m.get("type") == "15m")
+    count_1h = sum(1 for m in markets if m.get("type") == "1h")
+    
+    log.info("=" * 50)
+    log.info("🚀 WALK CAPTURE | $%.0f @ %.0f%% | %dh ahead", SIZE, BID*100, HOURS_AHEAD)
+    log.info("📅 %d markets (%d×15min, %d×1h)", len(markets), count_15m, count_1h)
+    log.info("💰 Capital needed: ~$%.0f (2 orders × %d markets × $%.0f)", 
+             2 * len(markets) * SIZE * BID, len(markets), SIZE * BID)
+    log.info("💡 Both fill = 2%% profit | One fill = 50/50")
+    log.info("=" * 50)
+    
+    if not markets:
+        log.error("No markets found")
+        exit(1)
+    
+    # Show schedule
+    log.info("📋 Schedule:")
+    for m in markets[:10]:
+        mins = int((m["end"]/1000 - datetime.now(timezone.utc).timestamp()) / 60)
+        log.info("   [%s] %s (%dm)", m.get("type", "?"), m["q"][:35], mins)
+    if len(markets) > 10:
+        last_mins = int((markets[-1]["end"]/1000 - datetime.now(timezone.utc).timestamp()) / 60)
+        log.info("   ... +%d more (last in %dm / %.1fh)", len(markets) - 10, last_mins, last_mins/60)
+    log.info("=" * 50)
+    
+    # Place all orders
+    total = 0
+    for m in markets:
+        total += bot.place(m)
+        time.sleep(0.3)  # Rate limit
+    
+    log.info("=" * 50)
+    log.info("🏁 Placed %d orders across %d markets", total, len(markets))
+    log.info("💤 Orders working - check Polymarket for fills")
+    log.info("=" * 50)
