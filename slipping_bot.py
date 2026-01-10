@@ -14,8 +14,8 @@ from py_clob_client.clob_types import OrderArgs, OrderType
 
 load_dotenv()
 
-BID = 0.49
-SIZE = 1.0
+BID = 0.48
+SIZE = 4.0
 
 KEY = os.getenv("PRIVATE_KEY")
 FUNDER = os.getenv("FUNDER_ADDRESS")
