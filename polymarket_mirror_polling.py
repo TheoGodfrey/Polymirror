@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
 """
-Polymarket Mirror Bot (MAXIMUM OVERDRIVE - V3.2)
------------------------------------------------
-✅ FIXED: Invalid Amounts / Precision 400 Errors
-✅ FIXED: Balance Rejection (Added Auto-Scaling)
-✅ ACTIVITY STREAM: Low-latency trade detection
+Polymarket Mirror Bot (MAXIMUM OVERDRIVE - V2)
+-----------------------------------------
+✅ HANDLES LARGE POSITION LISTS (250+)
+✅ ROBUST PAGINATION & TIMEOUTS
+✅ FIXED PRECISION FOR CLOB
 """
 
 import os
 import sys
 import time
+import math
 import asyncio
 import logging
+import threading
 import traceback
 from concurrent.futures import ThreadPoolExecutor
-from decimal import Decimal, ROUND_DOWN
 from dataclasses import dataclass
+from datetime import datetime
 from dotenv import load_dotenv
 
 # Fast JSON
@@ -26,6 +28,7 @@ except ImportError:
     import json
     def json_loads(s): return json.loads(s)
 
+# Async HTTP
 try:
     import aiohttp
     AIOHTTP_AVAILABLE = True
@@ -46,93 +49,142 @@ PRIVATE_KEY = os.getenv("PRIVATE_KEY", "")
 FUNDER_ADDRESS = os.getenv("FUNDER_ADDRESS", "")
 SIGNATURE_TYPE = int(os.getenv("SIGNATURE_TYPE", "1"))
 
-# Multiplier & Risk
+# Multiplier
 POSITION_MULTIPLIER = float(os.getenv("POSITION_MULTIPLIER", "2.0"))
+
+# Risk
 MAX_CAPITAL = float(os.getenv("MAX_CAPITAL_TO_USE", "5000"))
 MAX_BUY_PRICE = 0.99
 MAX_UPPER_SLIP = 0.05
+MAX_LOWER_SLIP = 0.15
+
+# Thresholds
 MIN_TRADE_USD = 1.05
-LOOP_DELAY = 0.5 
+MIN_SHARES = 5.0
+SKIP_THRESHOLD = 0.55
+POS_THRESHOLD = 0.0001
 
-# Logging setup
-logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s', datefmt='%H:%M:%S')
+# Speed
+BALANCE_REFRESH_SEC = 60
+HEARTBEAT_SEC = 10
+ASYNC_LOOP_DELAY = 0.5  # Increased slightly to handle larger data processing
+
+# Logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s.%(msecs)03d %(message)s', datefmt='%H:%M:%S')
 logger = logging.getLogger(__name__)
+logging.getLogger("urllib3").setLevel(logging.ERROR)
+logging.getLogger("aiohttp").setLevel(logging.ERROR)
 
-# CLOB Client Imports
+# CLOB
 try:
     from py_clob_client.client import ClobClient
     from py_clob_client.clob_types import OrderArgs, OrderType, BalanceAllowanceParams, AssetType
+    CLOB_AVAILABLE = True
 except ImportError:
-    logger.error("❌ CRITICAL: py_clob_client missing. Run: pip install py-clob-client")
-    sys.exit(1)
+    CLOB_AVAILABLE = False
+
+
+@dataclass(slots=True)
+class Pos:
+    tid: str
+    size: float
+    avg: float
+    cur: float
+    name: str
+
 
 class OverdriveBot:
     __slots__ = (
-        'target', 'client', 'my_addr', 'processed_activities', 
-        'my_cash', 'total_spent', 'last_hb', 'executor', 
-        'trades_fired', 'trades_filled'
+        'target', 'client', 'my_addr', 'positions', 'initialized',
+        'target_value', 'my_cash', 'total_spent', 'last_balance',
+        'last_hb', 'blacklist', 'executor', 'session', 'trades_fired', 'trades_filled'
     )
     
     def __init__(self):
         self.target = TARGET_ADDRESS
-        self.processed_activities = set() 
+        self.positions: dict[str, Pos] = {}
+        self.initialized = False
+        self.target_value = 0.0
         self.my_cash = 0.0
         self.total_spent = 0.0
+        self.last_balance = 0.0
         self.last_hb = 0.0
+        self.blacklist: set[str] = set()
         self.trades_fired = 0
         self.trades_filled = 0
+        
         self.executor = ThreadPoolExecutor(max_workers=4)
+        self.client = None
         self.my_addr = FUNDER_ADDRESS.lower()
         
-        # Initialize CLOB
-        try:
-            self.client = ClobClient(
-                POLYMARKET_API, 
-                key=PRIVATE_KEY, 
-                chain_id=CHAIN_ID, 
-                signature_type=SIGNATURE_TYPE, 
-                funder=FUNDER_ADDRESS
-            )
-            creds = self.client.create_or_derive_api_creds()
-            self.client.set_api_creds(creds)
-            logger.info(f"✅ Bot Ready: {self.my_addr[:10]}...")
-        except Exception as e:
-            logger.error(f"❌ Init failed: {e}")
-            sys.exit(1)
+        if CLOB_AVAILABLE and PRIVATE_KEY:
+            try:
+                self.client = ClobClient(
+                    POLYMARKET_API, 
+                    key=PRIVATE_KEY, 
+                    chain_id=CHAIN_ID,
+                    signature_type=SIGNATURE_TYPE,
+                    funder=FUNDER_ADDRESS
+                )
+                try:
+                    credentials = self.client.create_or_derive_api_creds()
+                    self.client.set_api_creds(credentials)
+                except Exception as e:
+                    logger.warning(f"API creds warning: {e}")
+                logger.info(f"✅ Ready: {self.my_addr[:10]}...")
+            except Exception as e:
+                logger.error(f"❌ Init failed: {e}")
+                sys.exit(1)
+        
+        if not AIOHTTP_AVAILABLE:
+            from requests.adapters import HTTPAdapter
+            self.session = requests.Session()
+            self.session.mount('https://', HTTPAdapter(pool_connections=20, pool_maxsize=20))
+            self.session.headers.update({"User-Agent": "PolymarketMirrorBot/1.0"})
 
     def get_balance(self) -> float:
+        if not self.client:
+            return 0.0
         try:
-            res = self.client.get_balance_allowance(BalanceAllowanceParams(asset_type=AssetType.COLLATERAL))
-            return float(res.get("balance", 0)) / 1_000_000
-        except:
+            params = BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
+            result = self.client.get_balance_allowance(params)
+            return float(result.get("balance", 0)) / 1_000_000
+        except Exception as e:
+            logger.error(f"Balance error: {e}")
             return 0.0
 
-    def fire_order(self, tid: str, target_usd: float, limit_price: float, name: str):
-        """Precision-safe order execution with auto-scaling."""
+    def fire_order(self, tid: str, size: float, price: float, name: str):
+        if not self.client:
+            return
+            
         try:
-            # Refresh local balance for the check
-            self.my_cash = self.get_balance()
+            size = round(size, 2)
+            price = round(price, 4)
             
-            # Calculate desired spend and scale to available funds
-            raw_spend = target_usd * POSITION_MULTIPLIER
-            remaining_cap = MAX_CAPITAL - self.total_spent
-            safe_spend = min(raw_spend, remaining_cap, self.my_cash - 0.05)
-            
-            if safe_spend < MIN_TRADE_USD:
-                logger.error(f"❌ SKIPPED: Spend ${safe_spend:.2f} too low (Min ${MIN_TRADE_USD})")
+            if price <= 0 or price > MAX_BUY_PRICE:
                 return
-
-            # FORCE PRECISION: Maker (USDC) 2 decimals, Taker (Shares) 4 decimals
-            maker_amt = Decimal(str(safe_spend)).quantize(Decimal("0.01"), rounding=ROUND_DOWN)
-            price_dec = Decimal(str(limit_price))
-            shares = (maker_amt / price_dec).quantize(Decimal("0.0001"), rounding=ROUND_DOWN)
             
-            logger.info(f"🚀 FIRING: {shares} shares @ ${price_dec} | {name[:25]}")
-
+            cost = round(size * price, 4)
+            
+            if cost < MIN_TRADE_USD:
+                size = round(MIN_TRADE_USD / price, 2)
+                cost = round(size * price, 4)
+            
+            if size < MIN_SHARES:
+                size = MIN_SHARES
+                cost = round(size * price, 4)
+            
+            if self.total_spent + cost > MAX_CAPITAL:
+                logger.warning(f"Capital limit reached: ${self.total_spent:.2f}/${MAX_CAPITAL}")
+                return
+            
+            size_str = f"{size:.2f}"
+            price_str = f"{price:.4f}"
+            
             order = OrderArgs(
-                token_id=tid, 
-                price=float(price_dec), 
-                size=float(shares), 
+                token_id=tid,
+                price=float(price_str),
+                size=float(size_str),
                 side=BUY
             )
             
@@ -141,80 +193,155 @@ class OverdriveBot:
             
             if resp and resp.get("success"):
                 self.trades_filled += 1
-                self.total_spent += float(maker_amt)
-                logger.info(f"💰 SUCCESS: Bought {shares} shares for ${maker_amt}")
+                self.total_spent += cost
+                logger.info(f"✅ {size_str} shares @ ${price_str} | {name[:30]} | Cost: ${cost:.2f}")
             else:
-                logger.error(f"❌ REJECTED: {resp.get('errorMsg') or resp}")
-
+                err = str(resp).split("\n")[0][:100] if resp else "No response"
+                if "not exist" in err or "invalid" in err.lower():
+                    self.blacklist.add(tid)
+                logger.warning(f"❌ Order failed: {err}")
+                
         except Exception as e:
-            logger.error(f"💥 ORDER ERROR: {e}")
+            logger.error(f"Order error: {type(e).__name__} - {str(e)[:100]}")
 
-    async def poll_activity(self):
-        """Polls the activity endpoint for the fastest trade detection."""
-        url = f"{DATA_API}/activity?user={self.target}&limit=10&type=TRADE"
-        async with aiohttp.ClientSession() as session:
-            try:
-                async with session.get(url, timeout=5) as resp:
-                    if resp.status != 200:
-                        return
-                    data = await resp.json()
+    async def fetch_positions_async(self) -> dict[str, Pos] | None:
+        all_positions = {}
+        today = datetime.now().strftime("%Y-%m-%d")
+        
+        # Longer timeout for large payloads
+        timeout = aiohttp.ClientTimeout(total=5.0)
+        connector = aiohttp.TCPConnector(limit=10)
+        headers = {"User-Agent": "PolymarketMirrorBot/1.0"}
+        
+        async with aiohttp.ClientSession(timeout=timeout, connector=connector, headers=headers) as session:
+            offset = 0
+            while True:
+                url = f"{DATA_API}/positions?user={self.target}&limit=100&offset={offset}"
+                try:
+                    async with session.get(url) as resp:
+                        if resp.status != 200:
+                            logger.error(f"API error [{resp.status}]")
+                            return None
+                        raw = await resp.read()
+                        data = json_loads(raw)
+                except Exception as e:
+                    logger.error(f"Fetch error: {type(e).__name__}")
+                    return None
+                
+                if not data or not isinstance(data, list):
+                    break
+                
+                for p in data:
+                    size = float(p.get("size", 0))
+                    if size < 0.001: continue
                     
-                    # Initial sync: fill the set but don't trade on old history
-                    if not self.processed_activities:
-                        for a in data:
-                            self.processed_activities.add(a.get("id") or a.get("transactionHash"))
-                        logger.info(f"📍 Synchronized with {self.target[:10]} activity stream.")
-                        return
+                    end = p.get("endDate", "")
+                    if end and end < today: continue
+                    
+                    tid = p.get("asset") or p.get("asset_id") or p.get("tokenId")
+                    if not tid or tid in self.blacklist: continue
+                    
+                    all_positions[tid] = Pos(
+                        tid=tid,
+                        size=size,
+                        avg=float(p.get("avgPrice", 0)),
+                        cur=float(p.get("curPrice", 0)),
+                        name=p.get("title") or p.get("question", "?")
+                    )
+                
+                if len(data) < 100:
+                    break
+                offset += 100
+        
+        return all_positions
 
-                    # Process new trades (oldest to newest in this slice)
-                    for act in reversed(data):
-                        act_id = act.get("id") or act.get("transactionHash")
-                        if act_id in self.processed_activities or act.get("side") != "BUY":
-                            continue
-                        
-                        self.processed_activities.add(act_id)
-                        
-                        tid = act.get("asset")
-                        name = act.get("title", "Unknown Market")
-                        size = float(act.get("size", 0))
-                        price = float(act.get("price", 0))
-                        
-                        target_usd = size * price
-                        limit_price = min(price + MAX_UPPER_SLIP, MAX_BUY_PRICE)
+    def refresh_balances(self):
+        self.my_cash = self.get_balance()
+        # Sum target value from current position set
+        self.target_value = sum(
+            p.size * (p.cur if p.cur > 0 else p.avg)
+            for p in self.positions.values()
+        )
+        self.last_balance = time.time()
+        logger.info(f"💰 Cash: ${self.my_cash:.2f} | Target Port: ${self.target_value:.2f}")
 
-                        logger.info(f"🔔 NEW TRADE: Target bought {size} @ ${price} in {name[:20]}")
-                        self.trades_fired += 1
-                        self.executor.submit(self.fire_order, tid, target_usd, limit_price, name)
+    def process_buy(self, tid: str, pos: Pos, delta: float):
+        entry = pos.avg if pos.avg > 0 else pos.cur
+        cur = pos.cur
+        if entry <= 0 or cur <= 0: return
+        
+        # Slippage checks
+        if cur > entry + MAX_UPPER_SLIP: return
+        if cur < entry - MAX_LOWER_SLIP: return
+        
+        # Allocation logic
+        ratio = (self.my_cash / self.target_value) if self.target_value > 0 else 0.05
+        target_usd = delta * entry
+        my_usd = target_usd * ratio * POSITION_MULTIPLIER
+        
+        if my_usd < SKIP_THRESHOLD: return
+        if my_usd < MIN_TRADE_USD: my_usd = MIN_TRADE_USD
+        
+        limit = min(entry + MAX_UPPER_SLIP, MAX_BUY_PRICE)
+        shares = my_usd / limit
+        
+        self.trades_fired += 1
+        self.executor.submit(self.fire_order, tid, shares, limit, pos.name)
+        logger.info(f"🔔 DETECTED BUY: {pos.name[:30]}... +{delta:.2f} shares")
 
-            except Exception as e:
-                logger.debug(f"Polling error: {e}")
+    async def poll_async(self):
+        current = await self.fetch_positions_async()
+        if current is None: return
+        
+        if not self.initialized:
+            self.positions = current
+            self.refresh_balances()
+            self.initialized = True
+            logger.info(f"📍 Initialized: Tracking {len(current)} positions")
+            return
+        
+        if time.time() - self.last_balance > BALANCE_REFRESH_SEC:
+            self.refresh_balances()
+        
+        # Compare current state to cached state
+        for tid, pos in current.items():
+            prev = self.positions.get(tid)
+            prev_size = prev.size if prev else 0.0
+            
+            # Detect size increase
+            if pos.size > prev_size + POS_THRESHOLD:
+                delta = pos.size - prev_size
+                self.process_buy(tid, pos, delta)
+        
+        # Sync the cache
+        self.positions = current
+        
+        if time.time() - self.last_hb > HEARTBEAT_SEC:
+            logger.info(f"💓 Active: {len(self.positions)} pos | Trades: {self.trades_filled}/{self.trades_fired}")
+            self.last_hb = time.time()
 
     async def run_async(self):
-        logger.info("⚡ OVERDRIVE V3.2 ACTIVE")
+        logger.info("⚡ OVERDRIVE STARTING...")
         while True:
-            await self.poll_activity()
-            
-            # Heartbeat & Maintenance
-            if time.time() - self.last_hb > 10:
-                self.my_cash = self.get_balance()
-                logger.info(f"💓 Bal: ${self.my_cash:.2f} | Spent: ${self.total_spent:.2f} | Fills: {self.trades_filled}/{self.trades_fired}")
-                self.last_hb = time.time()
-                
-                # Prevent memory bloat from activity IDs
-                if len(self.processed_activities) > 1000:
-                    self.processed_activities = set(list(self.processed_activities)[-500:])
-
-            await asyncio.sleep(LOOP_DELAY)
+            try:
+                await self.poll_async()
+            except Exception as e:
+                logger.error(f"Loop error: {e}")
+                await asyncio.sleep(1)
+            await asyncio.sleep(ASYNC_LOOP_DELAY)
 
     def run(self):
         try:
-            asyncio.run(self.run_async())
+            if AIOHTTP_AVAILABLE:
+                asyncio.run(self.run_async())
+            else:
+                logger.error("aiohttp required for pagination efficiency.")
         except KeyboardInterrupt:
             logger.info("⏹️ Stopped.")
 
 if __name__ == "__main__":
     if not PRIVATE_KEY or not TARGET_ADDRESS:
-        print("❌ Missing environment variables.")
+        print("❌ Missing env vars.")
         sys.exit(1)
     
     bot = OverdriveBot()
