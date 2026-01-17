@@ -1,0 +1,5 @@
+timestamp,alert_type,severity,market_title,trader,side,outcome,value,price,z_score,market_pct,url
+2026-01-16T00:08:36,STATISTICAL_OUTLIER,MEDIUM,Spread: Towson Tigers (-2.5),ScroooogeMcDuck,BUY,Charleston Cougars,14100.0,0.47,26.730787503934444,0.0,https://polymarket.com/event/cbb-char-tows-2026-01-15-spread-home-2pt5
+2026-01-16T00:08:44,STATISTICAL_OUTLIER,HIGH,Celtics vs. Heat: O/U 234.5,0x3A91dCb1A08867eAfe1e54699138A30d9BA31769-1768293870160,BUY,Under,2000.0,0.5,3.7246603381121184,0.0,https://polymarket.com/event/nba-bos-mia-2026-01-15-total-234pt5
+2026-01-16T00:08:44,STATISTICAL_OUTLIER,HIGH,Celtics vs. Heat: O/U 234.5,sovereign2013,BUY,Over,1731.69,0.5,3.2145137282061857,0.0,https://polymarket.com/event/nba-bos-mia-2026-01-15-total-234pt5
+2026-01-16T00:08:44,STATISTICAL_OUTLIER,MEDIUM,Will Ajax win the 2025–26 Champions League?,Steel5,BUY,No,1416.53205,0.999,2.6152935732458653,0.7790955919587275,https://polymarket.com/event/will-ajax-win-the-202526-champions-league
