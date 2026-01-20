@@ -1,0 +1,4960 @@
+{
+  "global_settings": {
+    "max_slippage": 0.01,
+    "max_position_usdc": 50,
+    "min_trade_usdc": 5.0,
+    "default_sizing_mode": "fixed",
+    "default_fixed_amount": 10
+  },
+  "whitelist": [
+    {
+      "name": "0x006cc834Cc092684F1B56626E23BEdB3835c16ea-1729683673397 (ROI 11%)",
+      "address": "0x006cc834cc092684f1b56626e23bedb3835c16ea",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "212121212121212121212 (ROI 24%)",
+      "address": "0x1bc0d88ca86b9049cf05d642e634836d5ddf4429",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "432614799197 (ROI 7%)",
+      "address": "0xdc876e6873772d38716fda7f2452a78d426d7ab6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kch123 (ROI 5%)",
+      "address": "0x6a72f61820b26b1fe4d956e17b6dc2a1ea3033ee",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Pimping (ROI 11%)",
+      "address": "0x1af1dfc2c523af1d7551597c985277cd11b30f7b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Ems123 (ROI 10%)",
+      "address": "0xb889590a2fab0c810584a660518c4c020325a430",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "jtwyslljy (ROI 14%)",
+      "address": "0x9cb990f1862568a63d8601efeebe0304225c32f2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "a4385 (ROI 24%)",
+      "address": "0x506bce138df20695c03cd5a59a937499fb00b0fe",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "SeriouslySirius (ROI 5%)",
+      "address": "0x16b29c50f2439faf627209b2ac0c7bbddaa8a881",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x2CB0845F6a4900FBac0199bD6BaE82dAEab2D8B6-1767554133950 (ROI 13%)",
+      "address": "0x2cb0845f6a4900fbac0199bd6bae82daeab2d8b6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BITCOINTO500K (ROI 6%)",
+      "address": "0xcd9bc2939f0dac121f6ccde59cca5e0b6a91414d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "JamaicanBobsledTeam (ROI 8%)",
+      "address": "0xd6b4bf910d4479184c4e17e01ec83ecbd376a278",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "NBA101 (ROI 10%)",
+      "address": "0x56e2c952f9b953521f08ef0eb0c15473a1fa4b88",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "hai15617 (ROI 14%)",
+      "address": "0xcc553b67cfa321f74c56515727ebe16dcb137cb3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x336151559E8C8b048DE5231dC83T2552 (ROI 6%)",
+      "address": "0x98f7207b2461aaa89f89945ddc1f0bee628fb3e4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "AMC44 (ROI 72%)",
+      "address": "0xe9bcaac97f80715ac817b3900ee7ff5b4b71b5e8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x2c335066FE58fe9237c3d3Dc7b275C2a034a0563-1759935795465 (ROI 13%)",
+      "address": "0x2c335066fe58fe9237c3d3dc7b275c2a034a0563",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ascetic0x (ROI 52%)",
+      "address": "0xfcbecc7e5186e88e03445b81f593685d62828f44",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "btc-lu (ROI 8%)",
+      "address": "0xf693bac0b9a42c5df41792673020ba7385ffe96c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ChangoChango (ROI 5%)",
+      "address": "0xc660ae71765d0d9eaf5fa8328c1c959841d2bd28",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x24357454d8d1a0cc93a6c25fd490467372bc2454 (ROI 7%)",
+      "address": "0x6e82b93eb57b01a63027bd0c6d2f3f04934a752c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "anoin123 (ROI 7%)",
+      "address": "0x96489abcb9f583d6835c8ef95ffc923d05a86825",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Tiger200 (ROI 9%)",
+      "address": "0x6211f97a76ed5c4b1d658f637041ac5f293db89e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "gatorr (ROI 10%)",
+      "address": "0x93abbc022ce98d6f45d4444b594791cc4b7a9723",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "PixelProdigy63 (ROI 49%)",
+      "address": "0x3f79fdff817d1e2407eb67c7128c310ee1ecbc6b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ololololololololo (ROI 21%)",
+      "address": "0x2c4ca29d332c67d3ad7bf22b3cfe9486e3b1cb39",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x3585558D59C5Ee4A53BB552C2dB9f5C518fE7c02-1768265321304 (ROI 7%)",
+      "address": "0x3585558d59c5ee4a53bb552c2db9f5c518fe7c02",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MistaJenkins (ROI 77%)",
+      "address": "0x611c20bf7fdc4e88ec4f0172c99efcaa30d5c982",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xc6174a742B2926f00E683828019CEF708ff9cd8E-1762579911011 (ROI 43%)",
+      "address": "0xc6174a742b2926f00e683828019cef708ff9cd8e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ttaten (ROI 90%)",
+      "address": "0x775936a0e20b2a00d112e3512c3c2b3deeec6020",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "tiegdn (ROI 55%)",
+      "address": "0x5b8e191262e24035481c026db820cdd996f4acb5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "PiggyBanksta1 (ROI 215%)",
+      "address": "0x5607f7aeac8cce7fab1c91dc9de4400e8b6dd320",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MNBBBB (ROI 16%)",
+      "address": "0xb8cd777114b6cc4d488e79eff1fef91e1c521f4b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x34aBa0ED4A752ce76461589212696987d711840e-1759592138245 (ROI 38%)",
+      "address": "0x34aba0ed4a752ce76461589212696987d711840e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "junglediff (ROI 50%)",
+      "address": "0xc77a8ae3de307d7b4aa910c997015d1c45b4daf8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Businio (ROI 90%)",
+      "address": "0x1a5bfdfc53a7661576e03e9155d476238711f553",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "pvpgvgxvx (ROI 44%)",
+      "address": "0x86b32df484bc6cfa72046ae9a62d3737d7b683b6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Lemon3000 (ROI 17%)",
+      "address": "0x68d25eb312390bd615f8a4beb6e81086805392c8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "xw888 (ROI 15%)",
+      "address": "0x89398997110d131fb54c4b2bcf70d757acba6022",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fatducky (ROI 12%)",
+      "address": "0xaf9e007c74c34d0813e7b49f76cb7d8ff435a250",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "percyyy (ROI 13%)",
+      "address": "0x7960f86f8f43d8830a16de52537c35ae1b92b94f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "edanerika (ROI 49%)",
+      "address": "0x2ab0a09994897a3582d9e68937cc73db8db42e1c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Udolfg (ROI 49%)",
+      "address": "0xfd2075dbe8fb79d4b5782c361000c5fcb6cc0404",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BrightCresr (ROI 50%)",
+      "address": "0x7c47ac85f859e41abb9f41fbbf0c6fa07cbd85f1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "NicholasWickerson (ROI 24%)",
+      "address": "0xf6ea56fa38789d4552b8e8a4d11d7f464e6e3ea8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "GamblerHicss (ROI 103%)",
+      "address": "0xbb4d5bff2f5b15f10b634598843d400a04aa7001",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Melody626 (ROI 13%)",
+      "address": "0xecaa8806a9a05049d7d5260a33dc924220e377a9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "LadyLuck2 (ROI 11%)",
+      "address": "0xcc3e87226912d35893b678eaa8a39d57b6fe37ef",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "azzzzzzzzz (ROI 10%)",
+      "address": "0xaba06aaf3d1fe58bb5a5e4b17856599f8e9552ca",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "whispersz (ROI 32%)",
+      "address": "0x1bde63277421da2b576d373abcbfb2549b42ca3a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "AuroraAuro (ROI 50%)",
+      "address": "0x828b733fa41273e74d54835cd7467279d315fa8a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "pdxd (ROI 50%)",
+      "address": "0xa66ee92fff4390d9944688bab1a2afbc461662d0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x1A3b7F2CeF204b0f03d00872e49E4F15Efb010ee-1760054191124 (ROI 40%)",
+      "address": "0x1a3b7f2cef204b0f03d00872e49e4f15efb010ee",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "dayanapauc (ROI 49%)",
+      "address": "0x2750e4c3b3dc5e6fe696e1ecab0467d081e151ba",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "redskinrick (ROI 11%)",
+      "address": "0xe24838258b572f1771dffba3bcdde57a78def293",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "NoobCapt (ROI 73%)",
+      "address": "0xee30e5174dae1fd602ff1f06cc398bf67a1f9297",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sdvssd (ROI 50%)",
+      "address": "0x06f510c477dc4eb7fd2e31debd09c27ceb4eb7fa",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Zigota (ROI 21%)",
+      "address": "0x899a258f5a379be61c567fc567c1fb4e5c6d63ff",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "khami (ROI 55%)",
+      "address": "0x914e244ae32c19982d96ab50b3b55e487d1feace",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Mirror2000 (ROI 40%)",
+      "address": "0x26e7234a906e7e93d1272cde5d6118d94749cc6c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "KenziCrypto (ROI 45%)",
+      "address": "0xaf429dce2fb4c31e3af6549f46fd513f516a68d9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "AlabasterDisaster (ROI 11%)",
+      "address": "0xccdb7d6b741aba0873690476fa14b365f403ffa9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "plankton2 (ROI 18%)",
+      "address": "0xeee9c7196b5cbf3a77ce90259e93cf4218a06e94",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "2402d9ce122AFC65F29DB85498066ef48C8648AD (ROI 54%)",
+      "address": "0x2402d9ce122afc65f29db85498066ef48c8648ad",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "PureBeaxx (ROI 49%)",
+      "address": "0x6b01c2e4667c295b1ac86d917f25961929d70853",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "dedriccumq (ROI 50%)",
+      "address": "0x777a0148389f8f20d20748208cdda0459849cbba",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fabianwindle (ROI 49%)",
+      "address": "0xfe1ebf0a83b820a8dc88313433c79a28b2b9929a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "EnchantedWhi (ROI 50%)",
+      "address": "0xfc4c5e63d034b5a8062350b528037e29faf33028",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bomber (ROI 19%)",
+      "address": "0xd776f0a066fd3014ecfac89cfd414440982bffeb",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Swerdlowzac (ROI 80%)",
+      "address": "0x5f8a9467168b315f94c2694492bd3c327f899506",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mp5reddotbluetiger (ROI 8%)",
+      "address": "0xc49fe658479db29e1a2fefebf0735f657dca9e05",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "snqicirlljx (ROI 47%)",
+      "address": "0x9a602d9a64d6573ba25450b5acbee5a5b3303f7c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "curiouscrypto2 (ROI 103%)",
+      "address": "0xf286c4251e2814a3af93b8f5d4c06f6b032d55e0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "clouder (ROI 17%)",
+      "address": "0x18097587f7d9d837aca3ad5365283a3a18a70d24",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Zywoo123 (ROI 9%)",
+      "address": "0xc44f432b014f36679e13615f95996eac32bbd49f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BowlOfPunch (ROI 8%)",
+      "address": "0x889e7f0464c72eb8cda1525ebc12b6aaba9d09e0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "WorldOrder (ROI 23%)",
+      "address": "0x073becc18ee05acc7ef36b263734b9a60f6fbdbd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "jincoolcool (ROI 16%)",
+      "address": "0x2cdbab913e9a0459a89b7d78eb2d6aea01034d30",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "armanddigni (ROI 48%)",
+      "address": "0x0dd42327f2c0f055d2cf52b329aeb42b8456cd25",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "captaincurry (ROI 26%)",
+      "address": "0x76c327ff3965b8db1a4e2b50ee6aeb19b90abaae",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "crazyfrog157 (ROI 45%)",
+      "address": "0x7529314457d0af3f4a5baf6348778927a0aa16e7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "TulipoII (ROI 20%)",
+      "address": "0x5666ffa1ca295ef3161f950547480a63115ac630",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x82a0C36C74d8bA47d2624295Ca581cEEf5312B4e-1768471082630 (ROI 49%)",
+      "address": "0x82a0c36c74d8ba47d2624295ca581ceef5312b4e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "cb289 (ROI 50%)",
+      "address": "0x68a28ee753b506e6a0be9632e6758f25f4477250",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "userdel332 (ROI 18%)",
+      "address": "0xdef926a087f91086267153f75d82809fa7462d16",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x7ac70e470049650997a2BA801aDcBDc054bdE0ef-1767626984576 (ROI 12%)",
+      "address": "0x7ac70e470049650997a2ba801adcbdc054bde0ef",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Darwinsfish (ROI 7%)",
+      "address": "0x801ed774db6a5981945a825074a6b91788f6ad90",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "dylanve (ROI 51%)",
+      "address": "0x15ec02f8a187518c21a35f46facdc8d65fde3a07",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "PandaTime (ROI 17%)",
+      "address": "0x27db6ea9051c6e2d68a8ff1fc2984e764c73e863",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "guooos (ROI 12%)",
+      "address": "0x59063e6e6cbb0de9fb528b0f1f912d8ce92b20c1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Kirstenv (ROI 50%)",
+      "address": "0x17b07d52c0836f14cc0c3263578da6d7d8d60d1d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "TEMPOT (ROI 12%)",
+      "address": "0x639484beecabf5771bb4edea214f3a2050dc9bb3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "adichat (ROI 11%)",
+      "address": "0xffdea9cb01653a259f0e18fae8819524b789c665",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "burleybrow (ROI 48%)",
+      "address": "0xa92ea23cc03d41adf11844e8427742a29feaa403",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "haliererumwr (ROI 37%)",
+      "address": "0xedf7190fec11d4a27866e4c4f7a687782cde00b6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ClearCreszz (ROI 48%)",
+      "address": "0xcaa0ae66af047910ad7fef28266b23baf44fb1f7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "foressst (ROI 12%)",
+      "address": "0x5f6c25e09db59f7a834da236cff48edc89ae587f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Hauchn (ROI 11%)",
+      "address": "0xf0ca28d5b0141f0a8e7b251dea80fd881cb166ed",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "tiannahowewf (ROI 43%)",
+      "address": "0x6b225f0df2535fed34cc89b9426c1b79acec9d06",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Mohamed21 (ROI 87%)",
+      "address": "0x3dd33f4d33b99fc2376082263676b19351372f46",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "TheGreatKhali (ROI 24%)",
+      "address": "0x9cc9f5bf0afd39c35a312a06cfa50e8cd9fd066f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "JUSTBUYNO (ROI 42%)",
+      "address": "0x199f9e490b812d977c8549c993e2ce0cccfb3d76",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "steven8813 (ROI 5%)",
+      "address": "0x52b4c780a1235a767ee188dd1887a196714834a8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "miltonopt (ROI 35%)",
+      "address": "0x8c35e9c6dbe3c7cb762f1b431de52fd0cf9288e6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Iulii (ROI 14%)",
+      "address": "0x27345a76c9f81b87cd0296b7ce8301f3ec006d9e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "letspla (ROI 20%)",
+      "address": "0x643c96495e174c63c5eb8370a60e5710f52f4219",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "2559-1 (ROI 85%)",
+      "address": "0x2b218f12ba3633efcf4401ec85c7f94c8535fed5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "margaritatr (ROI 44%)",
+      "address": "0xc24f3c307dd3b099da40cd5c7f8291112b384e75",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "willardasper (ROI 50%)",
+      "address": "0x5776df7441469b71e99e3fb90f052be27037e339",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "StillWhirl (ROI 49%)",
+      "address": "0x85fbf19b8e097edccea2f0dbd1b52ade937223fa",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "toutsurlalgerie (ROI 39%)",
+      "address": "0xc1c58745d3f983fbc10b31ffb45475765aa75c0d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sb911 (ROI 5%)",
+      "address": "0xca6e9879b0a83eb471f974e159f2483c08b546f2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MasonsConqueredRome (ROI 6%)",
+      "address": "0x357ecb1969b0a288d37e6a28223e620ef2082a0c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "capnjack1497 (ROI 15%)",
+      "address": "0xebbba265a23a5c13d94051b4be1090101e024214",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "theclownprince (ROI 22%)",
+      "address": "0x414b394fbf7a06d3efc58934bd1602ff08c80d3f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "tmacpoker (ROI 11%)",
+      "address": "0x78659d1fc23620991b949558c33761014b224af9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x9D4B905C57f466005eF13Ac04693C4653030b8E6-1765728896620 (ROI 28%)",
+      "address": "0x9d4b905c57f466005ef13ac04693c4653030b8e6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "qdfo (ROI 47%)",
+      "address": "0x0f5a5c5540e5bd9048095104426d0cf74c411167",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "jovanynamj (ROI 42%)",
+      "address": "0x91fa56042b81a0e00987ef28135448482b28c8bc",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "quertywins (ROI 9%)",
+      "address": "0xd26960fa8bafe528f23c3a982a11ee6501348055",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bolivergon (ROI 42%)",
+      "address": "0x9ad7ea66995b79f667380a64729cffe7cc9ab8eb",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "josefinad (ROI 47%)",
+      "address": "0xea34df6b663e60288acce999cd6406c5ce7d42e4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CrystalCovvf (ROI 32%)",
+      "address": "0x3a27e75dffa52efa975f5f7cf4a0333c4b40a449",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "HusbandWife (ROI 18%)",
+      "address": "0xedc869fdd1ab739b86c52e0c719fd8832fd53558",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mariondam (ROI 50%)",
+      "address": "0xdc5a2e21eba3cde0260c3f81e162b4b67374ca80",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Wannac (ROI 5%)",
+      "address": "0xa8e089ade142c95538e06196e09c85681112ad50",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mombil (ROI 5%)",
+      "address": "0x68c24bf4a8ad4d79a6fe4b8eec6f93a02dfd1711",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "loycehil (ROI 48%)",
+      "address": "0x0c7847fede52d8de11851a4e51fc85673bbef383",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "daphnehicrwoz (ROI 44%)",
+      "address": "0x34dc02b46d0197c3bde2605502674756da04461e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "TKJPN (ROI 8%)",
+      "address": "0xfbcab661183eb79651d32e410539fed3396c3b1e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "gamebreaker (ROI 34%)",
+      "address": "0x71b456c5cea5612fa0b964794613c8f283deb311",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "1521025 (ROI 33%)",
+      "address": "0x52639c89866e9e104efad87d325868ca1fad46be",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "IDidNaatOhHiMark (ROI 113%)",
+      "address": "0xbc0ad69fcb75a38acc3684acf02ded5cfdfc6fc4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kendallsocute (ROI 37%)",
+      "address": "0x42e91b2a0ec1fe72ca3fccb00857b59ecb7e80a8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Quantumczc (ROI 40%)",
+      "address": "0xe47e81f8b8438e334715f870c367100ebe4ecc0f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "vuv (ROI 44%)",
+      "address": "0x4bee774e43ae3cd5db54d9e626283e39ee59c357",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "IkanBlip (ROI 23%)",
+      "address": "0x98c78f5224c418afd06d0e2191cdc548e90d455c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "zakdahy (ROI 55%)",
+      "address": "0xedbe695110efee742df5d0c0592642e32b07011a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sadmaf (ROI 56%)",
+      "address": "0x4f07bc66c5f7ecd6a5641b6ec2d1e12c6e5a43d1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Pescano (ROI 78%)",
+      "address": "0xe57000b7172f95ea2abc4a1f05aa362bc65470e5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "tamo3 (ROI 34%)",
+      "address": "0x1838cca016850ac7185a9b149fe7d0bd2d6629b4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "qingkong (ROI 42%)",
+      "address": "0xff6042e1cb97a64f1b29383c3b3e8b0beb8e8c1d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "lucky65535 (ROI 15%)",
+      "address": "0x56ced570558881dad4f4dfd332510d0826ccea8d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "stimulatedEmission (ROI 98%)",
+      "address": "0xb5d04dcc21e6cce06b061bc50c72d2eafb76f8e5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kylahermannm (ROI 45%)",
+      "address": "0x6c2f6f109ef157d4a7c3d8ce154e20eecd3c0849",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "PirmakTaupyen (ROI 36%)",
+      "address": "0x710a95c3de1e8472a10c8de9e2271e34feeeed6c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "andronyo (ROI 45%)",
+      "address": "0xeaa90f19d89047c31bd92783e4ea92bd5421c084",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MinautorRanger (ROI 29%)",
+      "address": "0x9317fa2a50f67d96c23fa7d51864bf4cce8d75d9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sekashi (ROI 43%)",
+      "address": "0xccaa5005ea587f6164d49028f9d00b5ecd1ad428",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BUYLowSAIHIGH (ROI 18%)",
+      "address": "0xf94fe1799944b93b3b831b6f9f4f4aee1cdd78d7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CLonLEe (ROI 28%)",
+      "address": "0x756308212f5866fcf92a41335d6cd17c11f2ec98",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DD54A8 (ROI 49%)",
+      "address": "0x9ad7919a0de145325616d5e09eae59f2b9dc2b1f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kingdolor (ROI 46%)",
+      "address": "0xd7daaf8d639c81c7182b8cac9f8200298d8ba7fe",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "frozen7 (ROI 13%)",
+      "address": "0xdacd59b8b519dccaa0240b1ea03ebc2cb1d3a083",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "hjft365 (ROI 77%)",
+      "address": "0x863407d1caef3591049615ea8b0fc99bbad75677",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "hgfhg586 (ROI 77%)",
+      "address": "0xc81ce5d9395b29a9d2f7df6c355502bdb8de8974",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fhh5747 (ROI 77%)",
+      "address": "0xaddfc9aa7edc51bf234f057785d5f4e206495a9d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fgjsht43543 (ROI 77%)",
+      "address": "0x32c267a4d4ca6b0a84260677bbabf0e2a25fc8c9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "toktik (ROI 37%)",
+      "address": "0x379218d385f694b27420862eddfac10d9996e8ca",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "TopGlove (ROI 34%)",
+      "address": "0x654dd82ce2d70ea9b1dce058ca78af6b178b61ad",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "tiancairusi (ROI 48%)",
+      "address": "0x858611417581d1527bbbcff8ef52e66de9b28207",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Albert 1953 (ROI 9%)",
+      "address": "0x777fae71d2ff9ec48a1213d48ba1d9d91024a1bb",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "celestinonatusi (ROI 44%)",
+      "address": "0xb5770d43c26b311c68660bb00a28d62db176a911",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "edwardmantezt (ROI 52%)",
+      "address": "0x52275280366fb9686ace22a520a6bce3d61ad938",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "causaf (ROI 51%)",
+      "address": "0x4fd172b5c9e29086f966ab653172798f3f704cf1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "jammonghyun (ROI 63%)",
+      "address": "0xc3743305c9335d4afc972cfd9c0b802c2b4c46f4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "zxmasdg (ROI 53%)",
+      "address": "0xe4a5f19368d15791ae9cbbab41f70f53207298f9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ProbabilityXX (ROI 44%)",
+      "address": "0x07719c42224fb6fa52ebe0b42f8974f51391dd66",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "abagailquos (ROI 42%)",
+      "address": "0x544c901b4625f909e3e55ab7bc8b241e81d6a0b7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "YoutubeMusic (ROI 38%)",
+      "address": "0x181654cecfc637ee663803de9066fd108ae29dc8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CASKJDY (ROI 49%)",
+      "address": "0x592462b6ee0654dc9fd470cf053659faa972a3f8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "wawangex (ROI 32%)",
+      "address": "0xddd9d90ea0114448d6d452d6f890fcbacc2ffe8d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MaxisGwagon (ROI 19%)",
+      "address": "0xb9bca9fa4069228a37b583d64ff75efdf36b3498",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "SolarScri (ROI 36%)",
+      "address": "0xacf65143ce642e8f4405c1528cd66dff45be35d0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "anndny (ROI 40%)",
+      "address": "0x9785f9a02b28769841901b9ebd50aadba0fe36d8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "busterinc (ROI 50%)",
+      "address": "0xebca13e9e692581f8485aca78355725434f4c209",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "squirrel951 (ROI 41%)",
+      "address": "0x21267582e577fce4efd8f8bca7fc4f7e7a7d99e7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "lava-lava (ROI 6%)",
+      "address": "0x629bc4a1e53e1d475beb7ea3d388791e96dd995a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ewww1 (ROI 7%)",
+      "address": "0xed61f86bb5298d2f27c21c433ce58d80b88a9aa3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "eightpenguins (ROI 11%)",
+      "address": "0x3c593aeb73ebdadbc9ce76d4264a6a2af4011766",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Pawnshop (ROI 37%)",
+      "address": "0xfdc0a0c9f0e985239a609c58f0dfd3d3fa18bf0c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "JustClickeverywhere (ROI 12%)",
+      "address": "0xf83ec0e37ac9eece71c064507270e9001a734663",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "257382 (ROI 37%)",
+      "address": "0x77c69d943df91c716e7a1bba5609fa2c55eec80d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "1000toFerrariRoma (ROI 34%)",
+      "address": "0x63bf66ab44e9d8c9e9acecbc70629518305164a2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "lighter55 (ROI 60%)",
+      "address": "0xf9ec2de096c0982d4286de56092a87b2044060d2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kageyuki (ROI 24%)",
+      "address": "0xa8fa67aed008fd99268d60923032a914462277b5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kukubaja (ROI 15%)",
+      "address": "0xa0c37cb0587b0dd1542f794bcfa345762bba5b9a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "imnice (ROI 70%)",
+      "address": "0x99518fa0d201e7542ea2b852809da5a5c8d811bd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "noraboehmgb (ROI 52%)",
+      "address": "0xcbefc4c5c854f6369c5f3569fb725a1687c97b56",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "gayleeffer (ROI 46%)",
+      "address": "0x26a3ea2e4e042ac955099d17a469b86975e93d27",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Awe-InspiringSolomon (ROI 39%)",
+      "address": "0x007e404f70f00113225c01c471682329864ef4ed",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xF6dE8F922f3E7cefB31eb87799059C949c0f95e8-1761286617423 (ROI 17%)",
+      "address": "0xf6de8f922f3e7cefb31eb87799059c949c0f95e8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fuocoefiamme (ROI 17%)",
+      "address": "0xa363658060293cf76f628ef1331b7e2b98ce801a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "adityaqu (ROI 49%)",
+      "address": "0xb3744a3c71818f58239614cbed70d39a21a16798",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "javibids (ROI 57%)",
+      "address": "0x140b65765b1a5aa747f2b1429d2fb71d1a25d5c3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "slimjoe (ROI 5%)",
+      "address": "0x5e3040eb55cb0f4f86eb0af40cb84c9d3585acbf",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "8827622 (ROI 50%)",
+      "address": "0xf93fb3d63712f81d563e41a4140f6822b7cc0817",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xe082c07538bba2536ef5166226a28749a7d6aa2e (ROI 71%)",
+      "address": "0xe082c07538bba2536ef5166226a28749a7d6aa2e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x94E11944ac3d6a6f708F48F74909FCe0497CDf80-1768528591779 (ROI 17%)",
+      "address": "0x94e11944ac3d6a6f708f48f74909fce0497cdf80",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ksaducmz (ROI 47%)",
+      "address": "0x92d1a19a26e43fc34c50a4dd4ddccd9514975682",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "zxcw (ROI 50%)",
+      "address": "0xc554620779c5712e048cf7f37a792b333e0fda39",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "xvcxcv (ROI 50%)",
+      "address": "0x542ed829cbb40b8931a84eb18eef65f12da64252",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "paramisha (ROI 25%)",
+      "address": "0x174efb4639e3c58f5db5334b26ecc066f344b3c0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "obiefarre (ROI 50%)",
+      "address": "0x6f2ab2f1d69eb461b155310385b295ed91c955a8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "camsdah (ROI 42%)",
+      "address": "0x390b9d9ee6279b928f9f0eb7100d21d3de18d139",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "orrincreminoxr (ROI 47%)",
+      "address": "0x6d3d19b71fb9289eac1a6a1886460d5a41e01243",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "odifof (ROI 11%)",
+      "address": "0x98fbafc00de1b8ba747047835fce1b4c0f5eb06d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BJR (ROI 39%)",
+      "address": "0x33e153a2f1323ed1e52ebd3ecbdbc68ed0dfb30f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fiankee (ROI 6%)",
+      "address": "0xef104cc70851a4246e8e06790d7fad9708190b43",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "lolkkijkk074 (ROI 42%)",
+      "address": "0x1978c8a51c77fd50c7d28a7d31629f4691ed002d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "WYMAN (ROI 41%)",
+      "address": "0xf0d49075775102e35689991ff7c1cacaefa43583",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "TokenTrek (ROI 48%)",
+      "address": "0x722f6fc44e6cf5adfaf7545c97169ef448c25d78",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kofvk (ROI 29%)",
+      "address": "0xd009c9b902923842300f023febac1fc76fb3a1ad",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "LIXMS (ROI 10%)",
+      "address": "0x929efd28813b201562b684649600edce942ef3b8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "LEICHTT (ROI 8%)",
+      "address": "0x412ca841b9afe1dcb7ca9f2939821644cf5e97d3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "cliftonco (ROI 37%)",
+      "address": "0x4684640fddb28e308501bbc757fba2b4f2ed4cf4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "hershelchampl (ROI 34%)",
+      "address": "0x52987e0356c4ba70cdfd547651c0d1750bfbebf5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "aidavoluptas (ROI 47%)",
+      "address": "0x843114cd050980efc73ae72e002562938cb8b832",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Stavenson (ROI 8%)",
+      "address": "0xf5fe759cece500f58a431ef8dacea321f6e3e23d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Woyaofadacaila (ROI 5%)",
+      "address": "0x03524d9d00cffe5004d1d270edfea7b3109e3292",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "passerby-83 (ROI 26%)",
+      "address": "0x74326fd7414daeb4493ddb9656cf56c242dcd7d5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "leviqui (ROI 34%)",
+      "address": "0x3431c0e94cc3d61e43e3b30fadbd26e18a4bcdea",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xCa21960EBeafbF2FDc40d95DC10C04ACE133b07c-1730867105201 (ROI 6%)",
+      "address": "0xca21960ebeafbf2fdc40d95dc10c04ace133b07c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kennethbauer (ROI 51%)",
+      "address": "0x3e0b317ad1a9674fce054bbc7bf5ca00eaaf24fa",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "492232 (ROI 36%)",
+      "address": "0x020b234662865980cfd07868fc77ec8ef5a4277c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "yoyut (ROI 51%)",
+      "address": "0x661b368e5efb86fb86b44d117243d6fcea0d1bc1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "hipp (ROI 27%)",
+      "address": "0x81e4a2dd2ff59869ebc4f92bf75960384cd66f22",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x162f272e66376edd22c553017122ad1f19c8585a (ROI 12%)",
+      "address": "0x162f272e66376edd22c553017122ad1f19c8585a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Menautor (ROI 28%)",
+      "address": "0x4295bbc607cd1713525f73654b19e65c71d9d464",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Coldren (ROI 54%)",
+      "address": "0x8fd27abecd581ccc5665b3e93eb7ce9ba47f3479",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Andypro (ROI 43%)",
+      "address": "0xa2a8d7c9682f8365268aab7602ecd3d9427b8466",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MysticalMystic (ROI 38%)",
+      "address": "0x48bfd828ad57299231dc2e909b4928615944920e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "OSINTReport (ROI 7%)",
+      "address": "0x77b0b896910b3388e01708521d1f92d1f5c2ba0b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sfbuoasf (ROI 25%)",
+      "address": "0xc79df5849fff8527a383cec899008978c9ecca80",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ngukaghtlan (ROI 45%)",
+      "address": "0x104b449960d4e59f34aa42963ea1a3231f3686a8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "jaynguyen (ROI 50%)",
+      "address": "0xea61fa97b19e177d65962a6c735bc5d0c02ee618",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kkkdrake (ROI 34%)",
+      "address": "0x964d07826c242d42e98196f458d85e71d43e5194",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Blanche72 (ROI 48%)",
+      "address": "0xfb70c92de0f19d38d8639a091a619371dfde839c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "metski29 (ROI 32%)",
+      "address": "0x762ee19681f0482dfe3e44ca42e9a26b34564bf0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xF70A5F3F8226F0624cd3E34F9c5e262669EC166e-1768275731807 (ROI 62%)",
+      "address": "0xf70a5f3f8226f0624cd3e34f9c5e262669ec166e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "carrkatelyn (ROI 50%)",
+      "address": "0xf55139c46978f6f870b3e920eb60becb478b90dd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "air3 (ROI 27%)",
+      "address": "0xf143e056e11a8f341908779853eedc5d60affdb3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Astagmasterin (ROI 27%)",
+      "address": "0xd600f3016ac6c7364a9c1bc3614607b0adda9f58",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "grahamsharon (ROI 50%)",
+      "address": "0xc6663af2c713fecc829d3f04523635b558364642",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "undpr (ROI 23%)",
+      "address": "0xc4592f60ca12322212e59963d98a0fdee8317b3f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Makimaa (ROI 21%)",
+      "address": "0x47c1c4d166c200e5455fca85d3b8f155f8f3825f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bitterfish (ROI 17%)",
+      "address": "0x1cd24cc49782240413903b4b7e7694779f917f85",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "wanlishou (ROI 7%)",
+      "address": "0x92d8939d2f2503fb196ce25a6f3a9167f17c0924",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "EnchantedEnchant (ROI 41%)",
+      "address": "0x1ca6d8174c82e80aa01d5b2edab55d1104a18d37",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Wojack-lbs (ROI 11%)",
+      "address": "0xc550968433371f89f8e64f8f9e6041d932f35b65",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Graupeldown (ROI 48%)",
+      "address": "0x04a8ce59d7e26868bec82c77ba52f51f9a1932dc",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "dfhsr353 (ROI 63%)",
+      "address": "0xf874ca428f3ec93f3a1a0cc0d087c630d1b01ee0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x93E36B7c3bB06E81d8ef13eda8C27dCD49eF513E-1768461842450 (ROI 62%)",
+      "address": "0x93e36b7c3bb06e81d8ef13eda8c27dcd49ef513e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "RiverPlate2015 (ROI 38%)",
+      "address": "0x5c057091a91e5a4f2090aad4fc43ae545ae68cd5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "izaiahcul (ROI 31%)",
+      "address": "0xe002047d7e7d6ef436cc192982d77cf1d14f6958",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "liaautfrry (ROI 47%)",
+      "address": "0x4a166cbee8405171c59c78f3d6a9005bc8f0d8fe",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ahndf (ROI 48%)",
+      "address": "0x7364903304713fbb622f201e04d94f8581ea7cde",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "58278254 (ROI 42%)",
+      "address": "0x05202fa4cb41e02adf2e2d468b25afb6e9059055",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bertar (ROI 44%)",
+      "address": "0x07fd0bdbdcedf0adfde2e9de2e9d9a2be7c094e3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Ashmoor (ROI 54%)",
+      "address": "0x58b4659703fc571cda168bb9bfa821acd782d747",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "olivia91 (ROI 48%)",
+      "address": "0xd93f6bb32790442704fc47e39f1efb3785042df9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "webbmelinda (ROI 49%)",
+      "address": "0x3b2e5a94200080d1ac94c94f497ca56f9e8dfacd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bigballer (ROI 18%)",
+      "address": "0x79f365b8973887b4d5606650edf6948fcd0bd803",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "nicholema (ROI 33%)",
+      "address": "0x1702ec75663a1ad3de03f8df0bb8cded4128746a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "NovaNinja (ROI 34%)",
+      "address": "0x0ad40a45ec2f1d1f1404a80eaf34fc0cbeb2b8b5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "9J2K4M (ROI 34%)",
+      "address": "0x8e82e489bde23767db296fbc3e230a36436a4e15",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "joelvolupt (ROI 50%)",
+      "address": "0x5ce70d31394919022b9bec899857f3d5c2a10a3d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x742c04c3978a848dbe85849bd8a229eceaca5d8f (ROI 50%)",
+      "address": "0x742c04c3978a848dbe85849bd8a229eceaca5d8f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fgfdg445 (ROI 61%)",
+      "address": "0x80c25755e0e25766ddd642ea3b00bc18f5b6561c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kristen61 (ROI 48%)",
+      "address": "0x959b000429b215de440fd4b3eb8bb22de925ba3d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ksacny (ROI 46%)",
+      "address": "0xd5efd251ce27c8169be78f9c5c7719e25bc75493",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "notDaniel (ROI 44%)",
+      "address": "0x16f00c366ca193210c4dc65d3edd003bf8fa46ae",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "francisbrooks (ROI 48%)",
+      "address": "0x14a00fb7538435d34d3a4e5516dabc2e8875973a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bustnow (ROI 11%)",
+      "address": "0xfd4263b3ad08226034fe1b1ea678a46d80b58895",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ELNAIPEDEPAEZ (ROI 27%)",
+      "address": "0x7434ce39dfa9158840e028a59a802adaec812ff4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "euhgenia132 (ROI 45%)",
+      "address": "0xd29bf3b04b6f94dfdf0a125477df188741302da6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "55669978 (ROI 51%)",
+      "address": "0xe8bc70ea15f374d72947a5d95fcf5f032928528a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x2B495 (ROI 7%)",
+      "address": "0x2b495e9d1c25794d6b38101ba44884e2ab90d0df",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BigGumbaBoots (ROI 7%)",
+      "address": "0xd3faf1906cc31e75d1dfa0d7b57e8f97d33da26c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "tqnsoa (ROI 51%)",
+      "address": "0xc5b451e709f612470a70b1e3c5c0f441f4e24752",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xA6e35E000D10316fB45b4575F12cc90e5e876DFe-1768261008962 (ROI 8%)",
+      "address": "0xa6e35e000d10316fb45b4575f12cc90e5e876dfe",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Robbb (ROI 16%)",
+      "address": "0x9cdda449d7cedf1072d74982a5dc2349df3d3e97",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xdf207b231a91122fbc181093346a73894eca1940 (ROI 58%)",
+      "address": "0xdf207b231a91122fbc181093346a73894eca1940",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "uncoated-unwatched-jimmy (ROI 47%)",
+      "address": "0x8a67ca84508b0b8e27acfe539ddb7a8f5933cbcf",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Dobbypark (ROI 17%)",
+      "address": "0xafd4cb974c0468f5c0762975d75e1ae967ea2870",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "missoralways (ROI 19%)",
+      "address": "0x87e54440c5d8d49deb874d8912417133fba8ff01",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "oydl (ROI 21%)",
+      "address": "0x5d6cc9a511dbe10dcd3c48be76818a45849e853c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "taureanip (ROI 36%)",
+      "address": "0xaed71313437e19e0f6e5a56d4fc3c7c99183be64",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "leoessed (ROI 31%)",
+      "address": "0x9bf44be6006bf21283134ee88d65b3c30caa05f3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Vaprrlog (ROI 48%)",
+      "address": "0x6d4575beabb37e3dfe46d5240a664e070f647f4c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Rimemusic (ROI 51%)",
+      "address": "0x2c86f4f7e28569239f61dcf49d62c57c14c8a962",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x9606156487026903b040689076153AadDeb6Cd0c-1767940530320 (ROI 57%)",
+      "address": "0x9606156487026903b040689076153aaddeb6cd0c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Nexil (ROI 55%)",
+      "address": "0x46ed32fc85611f4954c67ee0500684b4d8664c8c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DreamCatche (ROI 39%)",
+      "address": "0xe545f1546fd79ab39caaf1910c1f708bcd041b45",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kadiya (ROI 30%)",
+      "address": "0x7ea6390ba0011c9ffc9b4154a7d32fc305ec03be",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "KSMAHycz (ROI 46%)",
+      "address": "0x23edfdfb599ea8c3e26cb9856a052497a62044ab",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kleanex (ROI 25%)",
+      "address": "0xd11140aa1e7f96b390fbe2266872ce10e073aaed",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "vrwrzl (ROI 51%)",
+      "address": "0xcdf9df968ce7db3e4b9d90d5685a970d51ab3e2c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "2481 (ROI 51%)",
+      "address": "0xf5de09a5f22f3f8e8a8c96557b89a5157918394a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bhgtlo (ROI 51%)",
+      "address": "0xf6df74aefb73676f7aca2045b41d17225ef0ff02",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x19974ce5980baE3d4c4D1a67CFce60C655492e36-1760671412706 (ROI 6%)",
+      "address": "0x19974ce5980bae3d4c4d1a67cfce60c655492e36",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "hjbrs (ROI 52%)",
+      "address": "0xb0a14221e2f6066fe376843d17a6bff6b2e7a0b0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Thaddeusoliver (ROI 50%)",
+      "address": "0xa1158b310b7029af9a6e579099ffb6d2b5ab3e25",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Dusskfall (ROI 52%)",
+      "address": "0xc7217bd64de3577cb62bc72244c3704afed4912e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "2486 (ROI 42%)",
+      "address": "0x594112c741696ffb727e300b10c9778ae66842d1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "emilyd (ROI 40%)",
+      "address": "0x17f23e97bbed911bbf9d0e2b84d896f72cead508",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "flossievolup (ROI 34%)",
+      "address": "0xce3d47ef7b9c61468e3c581840dda80199af3951",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Graupelnote (ROI 50%)",
+      "address": "0xc9491a37d3b8481768d6ff391e44b78a0cd63643",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Spectrumcord (ROI 50%)",
+      "address": "0x74422185976ecd289e21ab8e6df3e1b54ed33717",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "absol (ROI 14%)",
+      "address": "0x22292decebf2e9146b27fe59404d162447ea6bf8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Splatlouder (ROI 13%)",
+      "address": "0xb028b82a80c2d1e855ab4f3cd3a18ecf76838686",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ViralVivid98 (ROI 37%)",
+      "address": "0x4a42d23a23a3b53599d125448948583f4c4275f0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "h8rvy0a (ROI 14%)",
+      "address": "0xfe32a90a379e101079d9292f1c2fef57c27ba799",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Galehour (ROI 49%)",
+      "address": "0xa87cb0749fe148d1632442673f25889cb5b4e05f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Tonglin (ROI 20%)",
+      "address": "0xcfb8b7e312686df0b566bfe86a0f4836573ab04c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Sereneflowv (ROI 51%)",
+      "address": "0x15ad8996638d14532c339f6bb2f5e5ab9f3d5969",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "btero (ROI 51%)",
+      "address": "0xd8c97d319fdbf850bbae1b2d54ac74ae0b2c51ae",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xb21Aklasit671sx9 (ROI 8%)",
+      "address": "0x779aabbe29d74ea932d5bad84af02f852d0eca34",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "penal (ROI 10%)",
+      "address": "0xd1e05927aa5f36dbe3ccd4b0112946df2d6de7bc",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "aberneth (ROI 52%)",
+      "address": "0xb1c0bac062f43b3699483c3adbb999bde4a95036",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Ebonel (ROI 51%)",
+      "address": "0xddf10f0c40213ba5f49a97c73320b72d5764e1ce",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bkDpJjchh (ROI 18%)",
+      "address": "0xb2ff6eb10e47f2b3ac14637c0a8249ab7977c968",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DreamweaverSoul (ROI 49%)",
+      "address": "0x15d474f7ce8012bb96157e4d021cb64d2228d116",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CSDYSA (ROI 40%)",
+      "address": "0x4f7e356a08920d1fab2b8662886c50a7f4e8552b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Lynxor (ROI 52%)",
+      "address": "0x6b81aef34480948faeec39fe200754309e010032",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Amanok (ROI 9%)",
+      "address": "0x1abeb44ac776ffa55e320cbf5e9f578500fe8a07",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "adahtorphyct (ROI 48%)",
+      "address": "0xa1210df212f2dfc6f03f2bfa84840ea21d0066a0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Lightlinkss (ROI 49%)",
+      "address": "0x24204678be33e1c091f11686533531fb35b61328",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Wattshine (ROI 48%)",
+      "address": "0x14fc9cfca9f89ce375ccf4066992f8ea3207c94e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DeezNuggies (ROI 13%)",
+      "address": "0x833347f8ffaceb69e0f242247f1ae76be32ceb93",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Nimbustrace (ROI 49%)",
+      "address": "0x3155d6baa97cf78f8f2f6d350f15d0a77cffe8b9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "1szyje (ROI 49%)",
+      "address": "0x8dae1dd6084ffb9ff9658ad48a25de62a6380de9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "HouseMoney13 (ROI 8%)",
+      "address": "0x845495d7ed85c81dd58840d52db15a1dcd4931e1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "LunaLove (ROI 43%)",
+      "address": "0xcf47b6bbe4a0ed49cfb4ab6fc01321e93db2cf0a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Dewbeat (ROI 50%)",
+      "address": "0x7357b92e645b0651abd25cc3663b17b402846e08",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Huddy2025 (ROI 23%)",
+      "address": "0x063a58dad1e0b76d085953856f5c6910ea2a8382",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "StellarStrike (ROI 41%)",
+      "address": "0x41862841d4f7dc276599477a2d4cdd325138d58d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "just.some.guy2 (ROI 5%)",
+      "address": "0x56ebe2a8eb1b9bccfd3059f981f9c987e45e076a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "tragz (ROI 25%)",
+      "address": "0xc8649c1893aded2f12472b44a9aaa911b6dc97df",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "hehedd (ROI 15%)",
+      "address": "0x46bcbaf94922970fbf7100d36e3ed3a72f702d14",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "karleee (ROI 46%)",
+      "address": "0x9808ec95d64fe4bd316ae02d61e7aa2f18bdd7ad",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "asafwsv (ROI 51%)",
+      "address": "0xcf2d899a7444e77dccccbfa41e35ed9b6c3a62fd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "OceanBre (ROI 45%)",
+      "address": "0x786dc8fc01dd41272059277a6799c1ad8c1ad249",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Mistperch (ROI 49%)",
+      "address": "0x7a6e8fc5ac03517df8c2329d106410f89efe2a22",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "footking (ROI 10%)",
+      "address": "0xa45d10fea3ce5ac959e882674c7fee302173b413",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Frostan (ROI 52%)",
+      "address": "0xdd3006ae8069d8951b255a6a1d1ee97ac91fda2e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "reyquosf (ROI 50%)",
+      "address": "0xda0e5b6d17d947afaca431ba4ca9aa6f7ac5e2d5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x4cfa6c2c6f4b052984efe6d78d36948647e367e0 (ROI 38%)",
+      "address": "0x4cfa6c2c6f4b052984efe6d78d36948647e367e0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "thepredtooooor (ROI 18%)",
+      "address": "0x188cf0eeba6585ceb612457a89383b17739cc62b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "laurencec (ROI 33%)",
+      "address": "0x6c6d1001e18cc5488c664c340e13a69b6fbfc537",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "LCB1 (ROI 9%)",
+      "address": "0xe9f78864f34e710ef313c4b677b5c945d89700f9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "jghuyiuy (ROI 32%)",
+      "address": "0x4e0c09f3083db62ddac443225c87310599513403",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "dfghjk999 (ROI 32%)",
+      "address": "0xdc29897ac4bf2a3c7c3925f4a1549f1e03a55abd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "rachellemitch (ROI 49%)",
+      "address": "0xea37bc20f3c61b8af8668f0d47bee4cc3e0f8d5d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "komomo (ROI 50%)",
+      "address": "0x35b5eed4dfa7beb2292de214523c2fa294bc93c2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Tarnishcinder (ROI 49%)",
+      "address": "0xd5695812af4939b79d31dfad158e19866b8bcc08",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "NightWaypoint (ROI 49%)",
+      "address": "0x66054c0cfa4c5112d68dd63b5def887f2e2888a3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "merrittke (ROI 40%)",
+      "address": "0x5c04989c93149f69a578e003cd736fa012a65e95",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "marle (ROI 50%)",
+      "address": "0x43fc68516ada5a0013d62695d79c9f39a3fbf5d9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "KSAJGFYC1 (ROI 40%)",
+      "address": "0x49377d587675af2abf40dc846107e734b9a3b8bc",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "constantinwill (ROI 36%)",
+      "address": "0x50d76b89e55a01d4756789b79ecebbe94bf2d792",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mall25 (ROI 48%)",
+      "address": "0xde3abe0dd11ba5b4900f454fb0bc554f8b0b0128",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Froststring (ROI 49%)",
+      "address": "0x945f6931c9847b8c7af16fdf13d14d50b1c7b955",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "samo27 (ROI 14%)",
+      "address": "0xfaf12d7eba49daad694ea32ff5f425ccf0de795f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Tqower (ROI 48%)",
+      "address": "0x1f9685e48ce70ea511d436ff59e3b8116fcf3419",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x0eA285566D5d7C57494eAFC2691cB74f87F6FD0c-1760301076460 (ROI 37%)",
+      "address": "0x0ea285566d5d7c57494eafc2691cb74f87f6fd0c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mhhjk (ROI 32%)",
+      "address": "0x4d972b8f40e8f5189a7755240aa5d46577bfa48e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "pdurzm (ROI 48%)",
+      "address": "0xde83e3a8eb5f4e48a57f8ce7fff59f9a166b82f8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "brasc (ROI 47%)",
+      "address": "0x23ecf47caf821ce2f066d081a09c25038c405914",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "roteland (ROI 49%)",
+      "address": "0x01af1a2db2721a0495fbf526ae613095616638f6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Prismgate (ROI 50%)",
+      "address": "0x5ad5d54e5022134057edca059e9a03d18cbacd26",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "VvioletTheodore (ROI 47%)",
+      "address": "0xec5520f5eeb8d6349055de19439b16684027da41",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MoonlitSky (ROI 49%)",
+      "address": "0x92c49e15b3fac788f442185a2fb7816f2fb6c602",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "oswaldwar (ROI 32%)",
+      "address": "0x871818252360d03154662945047a651b97d6cf46",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Ohrlantha (ROI 42%)",
+      "address": "0x9f9e0e8c5f3337c2f45de1f0a41c111de076fe48",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "RunnerAI (ROI 28%)",
+      "address": "0xfe3c0b649c3a8007db62333dcf6bbe168ed1e646",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "zeybadiahkeene (ROI 48%)",
+      "address": "0xec1b9474429385f22c347bee0c1a504181fd7d1d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Ivanos23123 (ROI 12%)",
+      "address": "0x200c545d0ea7374042780780cd17cba5199b58ea",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x955c9661bf6e010beff0ba896a49f715a8c8990f (ROI 6%)",
+      "address": "0x955c9661bf6e010beff0ba896a49f715a8c8990f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Airshout (ROI 48%)",
+      "address": "0x0a0ebfbc2a8b4d2d9fe7450dfd1f5912b024fb2f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MysticalMingle (ROI 38%)",
+      "address": "0x6bccaaff6a1dbe6cf47aacb34fc376ea5f939c72",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "WWAS (ROI 36%)",
+      "address": "0x80e46c11a71d46f31838261935b500d2fabac347",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Suncrest (ROI 41%)",
+      "address": "0xcbdf25b425057fff80b8760d13dc3265397ef102",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fgfd324 (ROI 46%)",
+      "address": "0x799adc2bfd0e916e3729e6b352dcf0440217844d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Clearskyrainbow (ROI 38%)",
+      "address": "0x20ab5fa46a0dd9aa914e1180d49d8f6913111acd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "eastpak (ROI 8%)",
+      "address": "0x06ac70013cd0c7992ec830ad5df9f7f66d5b79ec",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "SunlitSu7 (ROI 35%)",
+      "address": "0xca81c217ef18c1c142931c03ce5b621c54a8d140",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "iwantasianwomen (ROI 7%)",
+      "address": "0xa268d4480a3785a3297ee2dbec955bb32e66d60b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CryptoCrown (ROI 37%)",
+      "address": "0x7800971996f368d9d93f570e906bcb3dbcc473d2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "niowhr (ROI 45%)",
+      "address": "0x23c9a2b39b4ff59e56ce46af20eca0010acb0dbd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mmoustique (ROI 7%)",
+      "address": "0xb8d8f201d3371e02ad89eb36b3d426b4a7e881d2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "luciouse (ROI 45%)",
+      "address": "0xd52f01db405793531681fc1fafd6de96adc4b217",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sushi4uuu (ROI 6%)",
+      "address": "0x1e294b009d97e9cb5f63586c7cb2e0f426fe9e66",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "candacemole (ROI 32%)",
+      "address": "0x73e28da998127cd0976914d8b759077adb2b7120",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xDeFbDDc11C11Cb1f540AeE7E9DEF3e671456bD88-1767459653670 (ROI 38%)",
+      "address": "0xdefbddc11c11cb1f540aee7e9def3e671456bd88",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "zmasdahjg (ROI 37%)",
+      "address": "0xf00972c015a78c94874a843b1f6daf1da9f93805",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mkatf (ROI 33%)",
+      "address": "0x5d989f0868a6ac34e6e9ce293c780461146a56cf",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x13CE9E717dCD64B262c9041C32BD444be576bF33-1756915373544 (ROI 6%)",
+      "address": "0x13ce9e717dcd64b262c9041c32bd444be576bf33",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "neymar1 (ROI 7%)",
+      "address": "0xf93f33cc7d962e9286ca08c285fb4c7508b8f94b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sheilaeam (ROI 28%)",
+      "address": "0x6f7e47da85825becfba07cba2c3789ec0a1ef0ae",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DontBetOnNuggets (ROI 30%)",
+      "address": "0x432188761e16a7708a12685caeb300630e9c8fdc",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "vawfvas (ROI 42%)",
+      "address": "0x4d76551a9da95b58a76eca5a69d6b1b1c9703e2b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "HoldenBloodfeast (ROI 7%)",
+      "address": "0x8204c2803f9b69e6a623ac70c92a049699ed56ea",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x9ff24b286fdca278acd82a0fe449e5d4b1c23d4c (ROI 31%)",
+      "address": "0x9ff24b286fdca278acd82a0fe449e5d4b1c23d4c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "SkylineSeek (ROI 33%)",
+      "address": "0x91e6f8162a915c88d7532a5c9772a86448e714b1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "SoftWhic (ROI 32%)",
+      "address": "0x9e87fb1ff3cdfe4aa3c42a3abcbdb4d4d085856b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "baran-ludoman (ROI 7%)",
+      "address": "0xc0bff7089f8536447e3d963fcbaa2d07e3e12032",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "wwld (ROI 29%)",
+      "address": "0xd726310bc91238c0fc680d1f0a1dd2fa85056ecf",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "laodi666 (ROI 10%)",
+      "address": "0x6e12ee3679f3c7777f95331c367e3ef374aa20e9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "4204782 (ROI 32%)",
+      "address": "0xd1f1d6dad3a627b7d8ca7b6aee21cea4c01396b3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mrstupid (ROI 21%)",
+      "address": "0x0af5935cb0f3784714d09635132e046652bf2470",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x14238ebc01567699007e82b7034387e1ee0c9f78 (ROI 40%)",
+      "address": "0x14238ebc01567699007e82b7034387e1ee0c9f78",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "52873645 (ROI 25%)",
+      "address": "0xa9aeac2f5529b902a4c85c0213177f98000d29f1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sylviavol (ROI 31%)",
+      "address": "0xbe2f1d9a0425ad6d7faddd0c40ab092a41b8ed9b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "riconitz (ROI 25%)",
+      "address": "0x2575d2a6a077c90d3f00afc1fa63db5724fc380b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "95217 (ROI 26%)",
+      "address": "0x09196e74fc2b303222b701ecc7f5adb1d826c868",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "TaylorUniversity (ROI 16%)",
+      "address": "0x3c88f285f1950a778524b678ed8cf5410d1a1433",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MemeLoverOfficial (ROI 17%)",
+      "address": "0x5d5542eb677346a9744796582a31bbbea4717cba",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Ecofarmer (ROI 10%)",
+      "address": "0xfaa55858f098040003978c3615a086cdd0cd7cc9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "2497 (ROI 38%)",
+      "address": "0x2bd3737999a3f67036f3cf59b4d156472bc7de14",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "61s155 (ROI 38%)",
+      "address": "0x23914dcd011260780b7abdf08a72ca898f3e964b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "cheyannese (ROI 30%)",
+      "address": "0xf8e2715c4ad16c71ff47c8d5b9414e609fc656f1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "SerendipitySkies (ROI 32%)",
+      "address": "0xe04a3d2af56a32629dfd1a60e169ba07fb1dea23",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "godddddd (ROI 33%)",
+      "address": "0x5174be7f9c58066aad63a9cdf8b0151bf2631153",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xb162b2bad3722d9561ff7f6cd920ceedbb1240e8 (ROI 38%)",
+      "address": "0xb162b2bad3722d9561ff7f6cd920ceedbb1240e8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "check12345 (ROI 27%)",
+      "address": "0xd8c28b016f910aa7b6f1813562d6369ffa8939ed",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "StellarShinee (ROI 37%)",
+      "address": "0x9bae51c43b3ecea3c45441a048acf52816be88f9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DreamyDaze (ROI 32%)",
+      "address": "0x8120d9aa4c67499980559e46395cb9fb6d017af1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "UncleBabyBilly (ROI 38%)",
+      "address": "0x1bbc39e429e0d6c119ecc31ed64b36326a60f458",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CryptoBomzh (ROI 8%)",
+      "address": "0x8fe87f8cfff3a80e95f98c645dbda5c0a4aefc24",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "patma (ROI 18%)",
+      "address": "0xa9801c16fd3fa7345916172a60951b3ba2d38080",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "HarmonyHues (ROI 33%)",
+      "address": "0x61673df607022bab1fcdbd87095ab3eae9df7761",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x229382F3855529A5b9D6f66dbf848c44874d1fc2-1768672568588 (ROI 37%)",
+      "address": "0x229382f3855529a5b9d6f66dbf848c44874d1fc2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xE8D3Ed7a48C65DC9A2deb24AE7DcAD4143D709ef-1759967217934 (ROI 39%)",
+      "address": "0xe8d3ed7a48c65dc9a2deb24ae7dcad4143d709ef",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "reginaldetud (ROI 34%)",
+      "address": "0x6270d0be45e5a2491e6641d2848384b5b9a8c318",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "carefulsea (ROI 37%)",
+      "address": "0x394ca358ba11c780768ad16fde78d89d964f2165",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x26ae7610923503348c1d3905c4b8e321bbc06a87 (ROI 33%)",
+      "address": "0x26ae7610923503348c1d3905c4b8e321bbc06a87",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bobbysith (ROI 24%)",
+      "address": "0x71fef690299836036662b59309120771a43784fb",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x412Fe1A101554f0b382181c3aF932e4B2D8030fa-1765485116047 (ROI 9%)",
+      "address": "0x412fe1a101554f0b382181c3af932e4b2d8030fa",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "torta.tech (ROI 8%)",
+      "address": "0x161a7f666ca49d592848cf415b42f49a84714103",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x6A6A504E25cad30ed1ea53323dDBCB90F9513993-1766721898109 (ROI 12%)",
+      "address": "0x6a6a504e25cad30ed1ea53323ddbcb90f9513993",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "noellang (ROI 35%)",
+      "address": "0xfaac24bb8a9c4fbaebd24d3bab71be33c597eea5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "2C3ZAA (ROI 38%)",
+      "address": "0xdbd106d3f968c2e6a02f3150ef622604587db15d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bosslv1 (ROI 21%)",
+      "address": "0xacd9d48b7ce46f49d717d4818dfa7fccfba7cb54",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CosmicHollow (ROI 39%)",
+      "address": "0xe7b78506979d5872f7d267c5de6a778632a20948",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x6d21f34a73c1f268d4eb8f13d20ca89c8887abbd (ROI 28%)",
+      "address": "0x6d21f34a73c1f268d4eb8f13d20ca89c8887abbd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ketman (ROI 8%)",
+      "address": "0x49adba6092a3288ef0ae2e5d5d1e77e69331f71a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "win2win (ROI 34%)",
+      "address": "0x68348a24a53958adc89155a9d1eac2874c82c8d3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "cako (ROI 12%)",
+      "address": "0x3bcfb937b12fa296a660b1fd8f957f383e5ddc5c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "EchoFlips (ROI 32%)",
+      "address": "0x70fbf183282a5405fdaa33d6f37edb0c2434f161",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "AlphaBetaGamma2357 (ROI 38%)",
+      "address": "0x5652090d21c85a9d1ca5b6a41fe07f3099fb00c9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "antoniettaex (ROI 33%)",
+      "address": "0x0eb7ef3e5c2baa9b85faa84555d90a5cc4b63930",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DOJ (ROI 13%)",
+      "address": "0xb43699cbbb52520952833c10737bc43e7625bb3c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Royced (ROI 33%)",
+      "address": "0xda4a93518753ce111341ad412543e542e2d6c7fa",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "121212c (ROI 33%)",
+      "address": "0x272910d7086843c14579f0a7f483e1ce108ea0cf",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "groundman (ROI 16%)",
+      "address": "0xb69efa5eabd3b1919615c7678a45688362e712f5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "tressaquip (ROI 33%)",
+      "address": "0x763932345a90d9ca89b570d2dd99b2c158bdcae4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "crazydonkey977 (ROI 30%)",
+      "address": "0x947d2a0ee8aee5e36be3e3011de8f249426bc69d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BlasTesla (ROI 9%)",
+      "address": "0x02d8495225a297157d25dbcf7ed9dd483bf80c91",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "2478 (ROI 32%)",
+      "address": "0x4f946f442ac9200b699e851b5b9043228fdfae29",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "onieconsequ (ROI 37%)",
+      "address": "0xe444e7667c793334d658242f9c8fef123fff183c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "EtherEliter (ROI 35%)",
+      "address": "0xeb20aaa15946d685e1b634cc96876cc8fd771bc5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "NeonFdrost (ROI 37%)",
+      "address": "0xdc2af7c90c5fdac5ae3a42e143d60c8da87a6f62",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "caylasch (ROI 31%)",
+      "address": "0xc5178dd7307267cefb594d34cbaac67f5c0c2476",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Blueberry1337 (ROI 6%)",
+      "address": "0x67bb64fac5252df3f61ee2d91a4b1350e40eb6ef",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "AvishaiBass (ROI 11%)",
+      "address": "0x6df6e2a9ba1e8d7609daada0a83138817f4a8458",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Maduroag (ROI 15%)",
+      "address": "0xbcf8489f9d7a10dd37fd85368f2beec76f115b23",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MaxDePayne (ROI 23%)",
+      "address": "0x3435d790a66de7db862ae2606ab1843ace3d1913",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Frostarden (ROI 36%)",
+      "address": "0x5fed6e746945c6555b3181b108b2e598da32394f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "NASIGORENG (ROI 26%)",
+      "address": "0x2f84cf93a42d154d737614d13999b6486957800b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "estrume (ROI 7%)",
+      "address": "0x3c5b209601d6cfbbd27e101c96f365c072100584",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "RadiantRad (ROI 27%)",
+      "address": "0xb531315fe120ff42fcc2d39bdc0393e817088597",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "GalaxyGleam (ROI 33%)",
+      "address": "0x82a6a158d3ce5c66299cecf22d0fbf3ab841d42b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Impossible-Is-Possible (ROI 7%)",
+      "address": "0x0c4f5b1295f39cf505679209a22adbafe61c0f33",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ldtjd (ROI 30%)",
+      "address": "0x22a9457106c1ff975540f27f4d5d6d8f5e39939f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "KidNR (ROI 34%)",
+      "address": "0x4d7fad0c5944fc24d4a67110f8e31abd5f559485",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "nikomolestiasbf (ROI 31%)",
+      "address": "0x04820c91c7cccb4876b903ee8e482f4f55dac830",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "IlIIllIIIllIIl (ROI 7%)",
+      "address": "0x86cd93526a4e7ad201ed3d1c6f2647b61837504c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "SchrodingerBet (ROI 7%)",
+      "address": "0x5a1cd342c117a4edb1e283a306ccfd60a3d4970a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bettyerat (ROI 27%)",
+      "address": "0xc2a00c9c03d3eb10545ccd1c58735b61eaf2f72c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mczippo (ROI 9%)",
+      "address": "0x17cd48439fad16167a032954c1c3691966327423",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BetFranklin (ROI 13%)",
+      "address": "0x66c1a6fe836ff555ca32848646acedbbe93bfa3f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "GerryHannon (ROI 10%)",
+      "address": "0x9733d16542233b38fa2a3432b6106cbc991bf034",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BitBlazez (ROI 31%)",
+      "address": "0xaf16d39452528a81ca28dc16bf2f0cf90de10949",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xC14E1840aaAA56e12409585AD2c2a74c161339a5-1723944811003 (ROI 20%)",
+      "address": "0xc14e1840aaaa56e12409585ad2c2a74c161339a5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "47258 (ROI 33%)",
+      "address": "0x1499b9b37862b30a45cba2a27531df307fc1264d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xD2BD0aD2E7F64E4A032ee79EB16346c87984B539-1767438447012 (ROI 8%)",
+      "address": "0xd2bd0ad2e7f64e4a032ee79eb16346c87984b539",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "makaka.moment (ROI 14%)",
+      "address": "0x80f7cb20463c3b6ce910d2ceec2b3c4e64463d6a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Waluig1 (ROI 32%)",
+      "address": "0x8cf4d3bd0f849bdd39ce68889259d9a584e65608",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "8JLK6P (ROI 28%)",
+      "address": "0xf3e3212ba89b8b8d0ef8eb640b5e917e0fa032c3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Breezy-Entrance (ROI 9%)",
+      "address": "0x5fc814d89c2aa979bd987add20d6eb39eb0439ef",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xb90a51dfa94d1bb1803cf7adffeff3bf0192e042 (ROI 30%)",
+      "address": "0xb90a51dfa94d1bb1803cf7adffeff3bf0192e042",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Betterjange (ROI 14%)",
+      "address": "0x1947814e058caa2ee0844baac3c84853aef094bc",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "natjaskols (ROI 32%)",
+      "address": "0x4bc608412fbe2522d6f4561ebd0486c7adb86a85",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DonaldoJ.Trump (ROI 28%)",
+      "address": "0xd91aa16e3bf27496251505706ef61335be41f14b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x279e61370DeD678258C659FCbFeBC8caF0008F57-1768047495166 (ROI 23%)",
+      "address": "0x279e61370ded678258c659fcbfebc8caf0008f57",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kumarinthan (ROI 13%)",
+      "address": "0x456d7e1295b785ba37725a0db29436b056b11fe1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "KingJulienPI (ROI 10%)",
+      "address": "0xc20c3ccd49e06eda6c336539abc16714872be2bd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "StarlightSiren (ROI 24%)",
+      "address": "0x0177681c172b396e02805a74b5302fddd5e48d3f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Esc999 (ROI 21%)",
+      "address": "0x7218ebd6b1e194a965ba035839b1076a2e254a76",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xA82a8a824d9102e2309584dA10C8622478BdA759-1756423120583 (ROI 9%)",
+      "address": "0xa82a8a824d9102e2309584da10c8622478bda759",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "yelizelek (ROI 19%)",
+      "address": "0x1869422e25f746be77df30a53855d85474b030c8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sagesuntu (ROI 26%)",
+      "address": "0xa0e28cc1dd51e59cf2fce3b663fccac5e98e9e14",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Bezdelnik (ROI 9%)",
+      "address": "0xdcb5d7bfa80b793c599b650d64da1aca0c94a908",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "iloveyougpt (ROI 17%)",
+      "address": "0x2f633efb75256a2f2445110c8978684ab8936643",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "chenpengzao (ROI 6%)",
+      "address": "0xb2a48372404e6a0bfb6c2f23d715d3acc5a8cf8a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "deondrescho (ROI 26%)",
+      "address": "0x6a78ccc79548ec8b476b5605605be1e1cd713f74",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "And-Gangsta (ROI 10%)",
+      "address": "0xe68ba84c4b41741f34864695dd5472209d77b796",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "belzarek (ROI 26%)",
+      "address": "0x03761ab2d2ad39e7313d0bf545aec43552c91b88",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fartknocker (ROI 15%)",
+      "address": "0x024aac540c7d7004f4a957b1ea273cf2e8ccdecb",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CoffeeDespiser (ROI 6%)",
+      "address": "0x629c2844d5c0e36774a67fe10dcd43ca31a76c01",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "granvillen (ROI 29%)",
+      "address": "0xd6cf03da70c3594349ae3378ea4952f05587365c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x5C6e54A0657D0159B993D17470C749DeC1bB0617-1764742279431 (ROI 24%)",
+      "address": "0x5c6e54a0657d0159b993d17470c749dec1bb0617",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "yanirar (ROI 26%)",
+      "address": "0xb06d112e27b2c28ea694a1525af211e883037c03",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xb2cA88CD9C431A0F1223029088Beb0cf4f035Fb0-1767081455101 (ROI 13%)",
+      "address": "0xb2ca88cd9c431a0f1223029088beb0cf4f035fb0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x2b1e45728dc290b8042082922e792592ca1889c4 (ROI 26%)",
+      "address": "0x2b1e45728dc290b8042082922e792592ca1889c4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x324d6b10e533076b7a4e6409edb3e5853237f1c8 (ROI 26%)",
+      "address": "0x324d6b10e533076b7a4e6409edb3e5853237f1c8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "PacDevil (ROI 18%)",
+      "address": "0x7abe99a791df56aee1b945d7ac5ead76e459cabb",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "biznis33 (ROI 5%)",
+      "address": "0x92d8a88f0a9fef812bdf5628770d6a0ecee39762",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CSSAYX2 (ROI 28%)",
+      "address": "0x38fc00877fb692b977589d6121976e7ebdb096be",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Redwoodkl (ROI 22%)",
+      "address": "0x20ed749a328d290f3becc6b17432912ba5a9c6be",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "rufuss (ROI 22%)",
+      "address": "0xcbb918195d71fdcd83d044599e4acd17cfb5dbd2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "newus (ROI 21%)",
+      "address": "0xd03b9e73a6bcf1cb742351a2c295fe594c4e856c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ELNAIPEDEPAEZ (ROI 17%)",
+      "address": "0x7434ce39dfa9158840e028a59a802adaec812ff4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "alpha0new (ROI 27%)",
+      "address": "0x0316d2de64fb5bdc941648d8e8a96a4fcb5ae283",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "1-fsXe79.bq-19Dm (ROI 7%)",
+      "address": "0xb58120a869601abf58606505e15817ea1d5db496",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ShoebodyBop1.75spedup (ROI 7%)",
+      "address": "0xb876b0feeb5311b58c227e94c25cec0c92fba86b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "cuncho (ROI 21%)",
+      "address": "0x2ce73a282c8b94b67f56ce889c28a1dc59a6b8fc",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x9cB321178a105224f9Da7f2486B6f3303651f37F-1756282298567 (ROI 17%)",
+      "address": "0x9cb321178a105224f9da7f2486b6f3303651f37f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "maduroisq (ROI 15%)",
+      "address": "0x75d4c19708ad084c1cf6a10cfdf528c76fd94027",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Cleo558 (ROI 17%)",
+      "address": "0xf59d13626707437ff073b96ff1d85dbcb003bb41",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "gambaman (ROI 25%)",
+      "address": "0x86a6a0c5a10c3913ef806a31a1c7105f3ca33674",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "temafloram (ROI 22%)",
+      "address": "0x0a2448ace3edd7deb995e6f4a6e7376623b24a1f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x682d5db701d7650ff0212c198a05fdbc3e08fb74 (ROI 6%)",
+      "address": "0x682d5db701d7650ff0212c198a05fdbc3e08fb74",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DREAMBIGx (ROI 10%)",
+      "address": "0x9e8ecc4cb3c4e48f544cba2fbbb252a6a65e8db8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x13fe52ac961acb9e7f9949874fae43274ea16ff7 (ROI 9%)",
+      "address": "0x13fe52ac961acb9e7f9949874fae43274ea16ff7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "iolololo (ROI 9%)",
+      "address": "0x20cb690e366b89e701cf44fa64591699a2ddd211",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Fabrizio123 (ROI 20%)",
+      "address": "0x073fa0a02a127be4ddca1d9863580110343ded92",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x22e17436ff7aab843a18cf6150cb5e36d1841230 (ROI 24%)",
+      "address": "0x22e17436ff7aab843a18cf6150cb5e36d1841230",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sabjuan (ROI 7%)",
+      "address": "0xb820a226ccd013630d84f5a6ea4d674cd183cbe7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Duratio (ROI 11%)",
+      "address": "0x581d24e58039e1f569dacde9c288e028b51f2b06",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Bertapotamous (ROI 7%)",
+      "address": "0x134a63b764ac7b008356e8db1857db94e6b09e42",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "AtiradorFreestyle (ROI 10%)",
+      "address": "0x95a9ff7399a389428a9a9deb6f416c635d2b4352",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "loganpaulfan (ROI 10%)",
+      "address": "0xb42cb1da422c3542fec1a8aad14ec00d77b3487c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xB9FB64e1cA9374a9e03649e8cDf8a2b9CcAC95Fb-1763775889342 (ROI 23%)",
+      "address": "0xb9fb64e1ca9374a9e03649e8cdf8a2b9ccac95fb",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CrystalCastoo (ROI 20%)",
+      "address": "0xacab0e8bf5bcd55e1c220948920ac6e89748fc4a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "aaook (ROI 8%)",
+      "address": "0x880a48d0a56049cb3c2f9e78ca53196196b7e678",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ronsonjonson (ROI 10%)",
+      "address": "0xf20986f7c6b8e3ea603a7bb33797d5ba982597e1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fsx45 (ROI 7%)",
+      "address": "0x133ba4d001ae339bfb08631eead95c5dabe92f22",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "johnlarx (ROI 17%)",
+      "address": "0xe6534dd9d60cafcd8ac78091fbb883927b1d4594",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "twt32 (ROI 10%)",
+      "address": "0x45d3fef38275a1524ee4c3bc51f783e190158478",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "411tefal (ROI 15%)",
+      "address": "0x370f943b2991025004e0f1c81076c6d36bfdc4e4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "PhoenixFuu (ROI 23%)",
+      "address": "0x683f8ee21a7e951cfa612df1a87e753d98613f68",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "HypeBoy (ROI 13%)",
+      "address": "0xef8d811b1624dc6c47af825c9c05a4b4df615ca3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "enzocostapt81 (ROI 9%)",
+      "address": "0xa629aad4efd1b2dfb6610bb8ba3743e383b9fe39",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "tyhgbhhg069 (ROI 17%)",
+      "address": "0x9d2f63b0c2e42a6f4548a489a46fb6b0b8f86cad",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "bb67h (ROI 8%)",
+      "address": "0x365783a181bea82f845a1f5e708687c07e4c6cd3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "dball (ROI 10%)",
+      "address": "0x0b48377febd4247aad40adb00802b833c1b79e7a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x0f969283107e288Aa5a00D913C36D8dc3389E6a2-1765505446356 (ROI 15%)",
+      "address": "0x0f969283107e288aa5a00d913c36d8dc3389e6a2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BuyerOfNo (ROI 6%)",
+      "address": "0x8bc395225ebe784f9941714b279e542b846573d1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Jerzy (ROI 6%)",
+      "address": "0x59432fa8141b0ddf25f64c9fc90cdb5672402ef2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "b2d0 (ROI 10%)",
+      "address": "0xe9514aa0b925353ea0d5e32978d636ec25ebde18",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Faquarl (ROI 15%)",
+      "address": "0x4ea67bdde5af4942a2c8f117730064cbe04ab249",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "icantbebroke (ROI 21%)",
+      "address": "0x9c3698709940cb8e9db3cdb926c536d4f25cc1ef",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "PiderPen (ROI 6%)",
+      "address": "0xeca1330141b502eeb9e4fd9172c73dd9324ee4c7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x7087CD3Bf54Eff81210EECeE5d0DAf37D708C61F-1760948659334 (ROI 5%)",
+      "address": "0x7087cd3bf54eff81210eecee5d0daf37d708c61f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "p0l1morphism (ROI 9%)",
+      "address": "0x56384f0b6ffd2d8547f9bf90403ac7c291bb8c71",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "allurbase (ROI 12%)",
+      "address": "0x5511b0618c809b107ba6bf38ea2a56fa31064f9d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Xero100 (ROI 15%)",
+      "address": "0xeffd76b6a4318d50c6f71a16b276c5b279445a86",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "LuizBonfa (ROI 6%)",
+      "address": "0xf31b74c1f464a97aa775e19195f94e125092241b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BBTAN (ROI 13%)",
+      "address": "0x5f56805ce0d1d65e96556427321c952ffc98a330",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xdf8e8ffc46c7f7d98e000f92e669b6950d6246ea (ROI 6%)",
+      "address": "0xdf8e8ffc46c7f7d98e000f92e669b6950d6246ea",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "654165 (ROI 19%)",
+      "address": "0x984931c7b9f738c28bebce8aa19fa7df3e11f9bf",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "misterironheart (ROI 16%)",
+      "address": "0x34957ac7d8f2ff3bef6190e5427acd198507282e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "tatix (ROI 12%)",
+      "address": "0xc42f45f0e8606fd585486ff22738352b4ead9390",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Yyjjtt (ROI 8%)",
+      "address": "0x1eb06435d217aafbc511e5e0225b46c6e2dbd25b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Djjam (ROI 11%)",
+      "address": "0x82c762fb547c4d02f41c9baef2258b4f0751e125",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "jaja5050 (ROI 5%)",
+      "address": "0x7c873c11e40ceaaba6385322d49f565b66659bd4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "redlioneye (ROI 19%)",
+      "address": "0x662a00b70022c45ee80f6f753baa60f1c85f77b7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x3aE14377aCB7cd713e90Fa82518c5C4b97c5BEfb-1766313088292 (ROI 15%)",
+      "address": "0x3ae14377acb7cd713e90fa82518c5c4b97c5befb",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "JimmyCarter (ROI 13%)",
+      "address": "0xac971309ee28be83f8ec479c2fcb9a8420e5a99e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "127983ads (ROI 15%)",
+      "address": "0x7ce61b04551ddb6faae92ca75ba744e6bba56b12",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x0F6521C2d521269c45F41F4A27B1b8EC95AFCDd3-1767548846983 (ROI 6%)",
+      "address": "0x0f6521c2d521269c45f41f4a27b1b8ec95afcdd3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "luse (ROI 17%)",
+      "address": "0x8e0b81fc079ba259584abbbf37b8e76032cbfca7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sdadqw312 (ROI 16%)",
+      "address": "0xa8b110270424e27c503f2eac2d3aaaa57eea171a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xC1279f0580792e964583e486A07ffA2b06fB66E9-1763453874861 (ROI 7%)",
+      "address": "0xc1279f0580792e964583e486a07ffa2b06fb66e9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Dodor (ROI 15%)",
+      "address": "0x7ce529680c57a78d53c5d13d237d22125dd47c13",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xadf1f4a93cee1b18447a09681023e6934f23547e (ROI 12%)",
+      "address": "0xadf1f4a93cee1b18447a09681023e6934f23547e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "chinuibi (ROI 15%)",
+      "address": "0x129b59f3fd6a0555307fa15bca4f87809fb024c4",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ilaughbird (ROI 11%)",
+      "address": "0xe14b1e13d5393c90c0fc37354fca5da4e4b61ad3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Frankpol (ROI 12%)",
+      "address": "0xa59ffa1a587f4054b46c50e58e3ef5558ba9d53c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "heyi8 (ROI 6%)",
+      "address": "0x7a3051610fed486c6f21e04a89bddaf22dfc8abd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "isaihillsr (ROI 15%)",
+      "address": "0x493030c4c483eed8e037f6ceecdd4043dfe0da1d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "T-Rexy (ROI 5%)",
+      "address": "0xbe5f79f3b415480f1edf89e4319f11041799d795",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mmmbop (ROI 8%)",
+      "address": "0xd5555147366b7e5bfcea444f4a06a745c18be28a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Bhootraaza (ROI 12%)",
+      "address": "0xb595a87f4519e86b8397a63d2228f2640bab7c01",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "nujioertsd (ROI 12%)",
+      "address": "0x26dbcc2e2166c41e25d6f3dc3141b7f1ada26191",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "baisu (ROI 13%)",
+      "address": "0xd1f4c6a586526f438b395d296882c1bca3581849",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "BENFICAA (ROI 6%)",
+      "address": "0x6996ae50436e2e72ab1777df915b40ad0bb6408d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Franklinbiensoigne (ROI 11%)",
+      "address": "0x9764e7ed1a484155ce1d18cf4b4e09af4210c40c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Bbbandit (ROI 6%)",
+      "address": "0xe818bb720047d6c0b5e201a50f07f4c2f5574bb3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "xyzbstuv (ROI 5%)",
+      "address": "0x9e83dbba95375e3e5b540c6e67b8cbcfee912bea",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DakotaCollins9 (ROI 15%)",
+      "address": "0x43d82865be6ea74ab0c3ac084fe301d9386055cf",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "666666 (ROI 10%)",
+      "address": "0x871b80ea3b1032db54590cbf112f542f4a01eef6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "xdd07070 (ROI 9%)",
+      "address": "0x25e28169faea17421fcd4cc361f6436d1e449a09",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Nemesiszx (ROI 16%)",
+      "address": "0x454653d7d23048ab8ffe5785f51211a9897f7402",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Randy11 (ROI 10%)",
+      "address": "0x20849f2a6ba050aff96ff0d8bc704cb9edac2175",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Investnow (ROI 6%)",
+      "address": "0x97f3f9f15c0063710c60d3ac9c40d17f4ba60eba",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x3De831470c1d71DA886eb7363E16dbFCf380371e-1768362683297 (ROI 12%)",
+      "address": "0x3de831470c1d71da886eb7363e16dbfcf380371e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "daydreaming (ROI 14%)",
+      "address": "0x0a7e48047bfdece269cd3cc519af230b5cf155a0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "seems1126 (ROI 8%)",
+      "address": "0x6b68f9f87a6dcfe9423c6bc1fbd7a653d6892c57",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "SoooWhatHappens (ROI 7%)",
+      "address": "0x80460cc0644ecd3885523adf8ea2d5f8ec35a845",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "gnarayan (ROI 8%)",
+      "address": "0x73eea6f3f6cb4c221dad15f71c5c94ca01bdf5c6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x050A (ROI 11%)",
+      "address": "0x5e73f200dfc2d0ca46f02b13d87cacb08c79d43f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "roro-176026 (ROI 8%)",
+      "address": "0x0700cb9b2504c30c55273c323f67faaa23a3267b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ysdfds (ROI 6%)",
+      "address": "0x341480f03bd569604e10921c40e760d5ac13c116",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MayoL (ROI 12%)",
+      "address": "0x626da8e9f657ed32a7cc292f4caf82fb1a16ff68",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "2NTPfKjx1Yr3ziKRD (ROI 14%)",
+      "address": "0xcd66533ca566d96fc26c8835d5f99b835f8fb9b1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "teja2026 (ROI 6%)",
+      "address": "0x3d0ede103718c48965174c42f45124256106da62",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "anyin (ROI 10%)",
+      "address": "0x99efb38a36ae1547c3f8c0b9cab3df2dbe5bed62",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x3131E9DA2012d241da62eb1e2dF06Af2B8bab77B-1766210934904 (ROI 11%)",
+      "address": "0x3131e9da2012d241da62eb1e2df06af2b8bab77b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x89741D8c76E165cC49d4Ce68374bB022754CBeDE-1763057208181 (ROI 9%)",
+      "address": "0x89741d8c76e165cc49d4ce68374bb022754cbede",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "xcb7afh8h2 (ROI 5%)",
+      "address": "0xba721734481c5eb379c32a533845f2caf1f721aa",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "leCommissaire (ROI 7%)",
+      "address": "0x9238743eeba8bbfe9e85ac7ba2e1e3d77877b73e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x21D4a52AC6cF16566cf3945CdEA156aC362584Bd-1766530948404 (ROI 7%)",
+      "address": "0x21d4a52ac6cf16566cf3945cdea156ac362584bd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "pally (ROI 9%)",
+      "address": "0xfb13cf3a8c9c40c02979e601261a27dc365037cd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x590d0BACD7b9aCdb605e85aD0d4cf51EC8fe1c52-1766717367816 (ROI 7%)",
+      "address": "0x590d0bacd7b9acdb605e85ad0d4cf51ec8fe1c52",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xd9c48e54facd60ef03a056258ff8bb95b4ecc9b0 (ROI 10%)",
+      "address": "0xd9c48e54facd60ef03a056258ff8bb95b4ecc9b0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "GeepaP (ROI 7%)",
+      "address": "0x477fcd39c75956843c18083caa4c8c61f9ca6c45",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "crazycary (ROI 9%)",
+      "address": "0xd8d5c4ea4c40789cc215c9695a0b300f27863071",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ChilternCapital (ROI 13%)",
+      "address": "0x91797d9ef3b409fe60a6fcd9deb66024db1f0a40",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "goyardday (ROI 12%)",
+      "address": "0xcbd211738f69a9001d47461ded947021853df8a0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "dodged-a-bullet (ROI 6%)",
+      "address": "0xc288dbd651dbcf41e7aac3b523b7e6edc5023480",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "goingsocial (ROI 7%)",
+      "address": "0x04902c7046da0f93f29d070b00f9366a165ac81f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xc210690cbcf2e8734a0a586d42dfbd9dee0539fc (ROI 6%)",
+      "address": "0xc210690cbcf2e8734a0a586d42dfbd9dee0539fc",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "shousho (ROI 6%)",
+      "address": "0x8de109d4a1ca39cf7dbbd0823ecc6155292b956e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "AlexZoidberg (ROI 11%)",
+      "address": "0x5493d7a21437b49bdf6c1b6fa6b92f34399058b9",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Rawdy (ROI 6%)",
+      "address": "0xc6fa9a0058f324cf4d33e7ddd4f0b957e5d551e5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "pleasent242 (ROI 6%)",
+      "address": "0x698bbfabc657d1e08b608b8ce0a58ed808b74426",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "matthewceo (ROI 10%)",
+      "address": "0xe8278d22bef444ede84505b7c0ec4e4001305209",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Leviathan1832 (ROI 7%)",
+      "address": "0xedc2834124c0465fb2ccbf239896ef65f975ad9f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "xxz145 (ROI 7%)",
+      "address": "0xa114df303c7e0dd1f661f95bb1f901ea197255b7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "li96 (ROI 8%)",
+      "address": "0xbebf46dd05ce3e229bd59a4f48dbc20bc5904e07",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "frozenz (ROI 8%)",
+      "address": "0xcea688b408e70f4bf9afaa665ae9e48733b567ad",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "oristarda (ROI 12%)",
+      "address": "0x44bbdb3dcd70e68494aaa7398884465d2e3eb5bc",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x04863f4adb96aaf5042fb697e36bd5fb0bbefbc2 (ROI 11%)",
+      "address": "0x04863f4adb96aaf5042fb697e36bd5fb0bbefbc2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "47trrr47 (ROI 10%)",
+      "address": "0xf5ff4c9f9943e156065bef6798e90e04826b2390",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CringeBettor (ROI 12%)",
+      "address": "0x8a0077bd873e4b42b7485a73b528517d1b8dbfc3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "hog11 (ROI 7%)",
+      "address": "0xa18d6c0786e00a1480181e9253e3ad23ebf3f38c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "DjPonyboots (ROI 6%)",
+      "address": "0xd1e0c0db26fb636fb557704f05f7cd8ae4148913",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "nogodcomplex (ROI 5%)",
+      "address": "0x5fcd7afe1d2da7ced927348aa837b6ead132c2ac",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "splatloud (ROI 6%)",
+      "address": "0xbe78735039230635d5debcdc11400619d7e2c533",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Herky (ROI 8%)",
+      "address": "0x03c5dae8ba3756d3639f53aa40602914de8775b8",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "User175 (ROI 6%)",
+      "address": "0xdfee1d79b4384ca40109c87c8b5027df33a364bb",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "selfbillion (ROI 7%)",
+      "address": "0x11f595efb56332743b05b803cfe9d557c5605d82",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ananab (ROI 10%)",
+      "address": "0xde0c0b9bc14d0121ebfc1b56d76f333ce010a715",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "wbwfkqar (ROI 10%)",
+      "address": "0x243bc8af929d5f3bc46013640c14504cb3f964f2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Myway (ROI 5%)",
+      "address": "0x52f9c45a6fa8182649067bef26209878b935e1c7",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "stalker (ROI 8%)",
+      "address": "0xeb67bdb79f334428c326cb7f78398b439f37e62a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "amberheard (ROI 6%)",
+      "address": "0x6d3fa0200fec1dbcf4dd7e4408aa1e53779ca942",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Teshub (ROI 9%)",
+      "address": "0xa5d3be6c4ef51b9e5f69b21be3e8c4a692c4a6c6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Useralinfinito (ROI 8%)",
+      "address": "0x48e1ac59693bde26d01c7c89d9f680edf90510cf",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "newshuzibi0.04 (ROI 5%)",
+      "address": "0xa7b505fa1d68c6526668ee73cc83c80b87cb798c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "JJ49999 (ROI 10%)",
+      "address": "0x892a23e999eba9bc8cf694cfc4286d2f6e55df27",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "blowmywhistle (ROI 6%)",
+      "address": "0x2dad8b63c3e7b240fc21b70f20a64ee91943a040",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mazw8 (ROI 6%)",
+      "address": "0x7c30ee60b7f53f80211ca65df99d48cce53b7673",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "C63AMG (ROI 6%)",
+      "address": "0xb31e41965df4ab8014de4c4d8da9deff0a6ac120",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x3A91dCb1A08867eAfe1e54699138A30d9BA31769-1768293870160 (ROI 7%)",
+      "address": "0x3a91dcb1a08867eafe1e54699138a30d9ba31769",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x963137a0BA0B02EBf6F37710023Cc1B0303289A1-1764031525036 (ROI 5%)",
+      "address": "0x963137a0ba0b02ebf6f37710023cc1b0303289a1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "gqqd (ROI 7%)",
+      "address": "0x7d5697c41094189fa3c99cf90cbe066160ad0ba5",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "supaforecaster (ROI 9%)",
+      "address": "0x80ee90726b3a733674a976283719005385455cf0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "hereticprayers (ROI 9%)",
+      "address": "0x4ecbdd54b9a20d1b74597f150d1457acb4ec514c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "TimJang (ROI 7%)",
+      "address": "0xabdc19966ccc439ef34e48f504dc672e5f4049ff",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "otmiv (ROI 8%)",
+      "address": "0x54fde20fa60e932fc480071e05695b42caa94ac3",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "mzmmzm1 (ROI 6%)",
+      "address": "0x836b8471151891222059e690a0c58b67303b32a0",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "doomietrue (ROI 6%)",
+      "address": "0x01c23da81311a5a99f585b7047f094dbc7a78ace",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "koningtoto (ROI 7%)",
+      "address": "0xb96c242c89095060344ea18969a83aa7d6c66cc6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x0f8bdc9a862ca8e964c8560b554991c4998bc4f6 (ROI 7%)",
+      "address": "0x0f8bdc9a862ca8e964c8560b554991c4998bc4f6",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "YoloNation (ROI 6%)",
+      "address": "0xecefc7da07fa0b130b6ebfbbf669861248f0558a",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "aradchenko1 (ROI 7%)",
+      "address": "0x850946b7d86666e05a94911fc3f0ae674cf9dee2",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Rumpelstiltskin (ROI 8%)",
+      "address": "0xfb1b4e2db61efb47bfb1ac92807c76d4f367a11d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "CompulsiveGambler (ROI 5%)",
+      "address": "0xe0f1e7751df4035f78a5eb2f4296c98b4d5bc4bd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "S55 (ROI 8%)",
+      "address": "0x712433f69c169ebaaa67ce13f3f66f54575e70c1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xa67cb49d2073fef1ed5f06c4200a2caff0b80d2c (ROI 7%)",
+      "address": "0xa67cb49d2073fef1ed5f06c4200a2caff0b80d2c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sniffies (ROI 7%)",
+      "address": "0x5e944d8eec33c36c2611a61ab4fba7735a10a985",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "erhett28 (ROI 8%)",
+      "address": "0x135db5f9cb40558d20a2af8a7f84a634de0e1f4b",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xb3afE31e081B7f9134323CD337E2C8362C99ACa1-1768224006413 (ROI 6%)",
+      "address": "0xb3afe31e081b7f9134323cd337e2c8362c99aca1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ZacksD (ROI 6%)",
+      "address": "0xd7951f1ff7880761dcb3d186630d86047dbf6fcd",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "memetrader (ROI 7%)",
+      "address": "0x3ee1d6869a02d59f7ce91bcbcb883b46804316de",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Ket218 (ROI 6%)",
+      "address": "0x7d8c02a93418d3d1a0c9a45cb0443e3046f60b5c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Gamma9000 (ROI 7%)",
+      "address": "0xf9199a9739ff35570b7e971f2e72b241a99d128e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "sayla1 (ROI 7%)",
+      "address": "0xad4bca4d1fb3de11ce17b0002573cf198e3fe93d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "h4xor (ROI 6%)",
+      "address": "0x7a251ff68217a0418a8f7eddede5b638f8c881d1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "NOOSAWA (ROI 7%)",
+      "address": "0x1bb80c0a8a7d2637b7787141e08f91371481a606",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "fabiplouf (ROI 7%)",
+      "address": "0xf5b723a4a8efb369f4db1228eb7ba9279c353e1c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "johndoe33 (ROI 7%)",
+      "address": "0x6b2abcde91c7720a82920d20e54e45f0af894a00",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "MightyDaMan (ROI 5%)",
+      "address": "0xed0e346892cf2a7056cc0f1105c02b7d02eab305",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "liliqifeile (ROI 7%)",
+      "address": "0x3b46a472dfdc3aa2eb08a8195d7d4459c5a2121d",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "azakaeli (ROI 7%)",
+      "address": "0x708dba576d798c24215e267413503269fe39ea78",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0xaE58316c95F7d9B79794974f9f09C48f43e513c1-1762102610235 (ROI 5%)",
+      "address": "0xae58316c95f7d9b79794974f9f09c48f43e513c1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "ayslate (ROI 6%)",
+      "address": "0x4a36c2e75d257de4f4c66a3be88812efd0e03aab",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "aqua1 (ROI 6%)",
+      "address": "0x1fff6660d85e363e4b269555a6df34111add531c",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "otto21 (ROI 6%)",
+      "address": "0x9f88faf08840cf0125171e64c44899fc45742a93",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "udhhd (ROI 5%)",
+      "address": "0xe54fbc066de94244cc8bbe52a65229524df25cc1",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "0x21eCbb95a15822bBdD4Ab71345385a6056D95348-1763085902493 (ROI 5%)",
+      "address": "0x21ecbb95a15822bbdd4ab71345385a6056d95348",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "kkalwayswin (ROI 5%)",
+      "address": "0x57b115d26cf20824ac396e31269fedd337b7775f",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    },
+    {
+      "name": "Possums (ROI 5%)",
+      "address": "0xc2503d10efe737c0e81fea8f90105c7b69cc8d6e",
+      "sizing_mode": "fixed",
+      "fixed_amount": 20,
+      "max_slippage": 0.01
+    }
+  ]
+}
