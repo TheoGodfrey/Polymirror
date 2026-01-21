@@ -1,0 +1,155 @@
+05:54:38 | INFO | 🌐 Using public WSS: wss://polygon-bor-rpc.publicnode.com
+05:54:38 | INFO | ==================================================
+05:54:38 | INFO | === 🦅 POLYMARKET MIRROR BOT V10 ===
+05:54:38 | INFO | ==================================================
+05:54:38 | INFO | 🔄 Config Reloaded: Monitoring 706 Traders
+05:54:38 | INFO |    📋 Global settings from whitelist.json:
+05:54:38 | INFO |       sizing_mode: fixed
+05:54:38 | INFO |       fixed_amount: 1
+05:54:38 | INFO |       max_position_usdc: 5
+05:54:38 | INFO |       max_slippage: 0.035
+05:54:38 | INFO |    Sample addresses: ['0xaf429dce2fb4c31e3af6549f46fd513f516a68d9', '0x4bee774e43ae3cd5db54d9e626283e39ee59c357', '0x279e61370ded678258c659fcbfebc8caf0008f57']
+05:54:38 | INFO | ✅ POA middleware injected
+05:54:38 | INFO | ✅ HTTP RPC Connected
+05:54:38 | INFO | HTTP Request: POST https://clob.polymarket.com/auth/api-key "HTTP/2 400 Bad Request"
+05:54:39 | INFO | HTTP Request: GET https://clob.polymarket.com/auth/derive-api-key "HTTP/2 200 OK"
+05:54:39 | INFO | ✅ CLOB API credentials set
+05:54:39 | INFO | 📥 Syncing Portfolio Data...
+05:54:40 | INFO | 💰 On-chain USDC.e balance: $0.14
+05:54:40 | INFO | 💳 Balance: $0.14 | Positions: 96
+05:54:40 | INFO | 🚀 Starting monitoring loops...
+05:54:40 | INFO |    📋 Watching 706 addresses
+05:54:40 | INFO |    💓 Heartbeat every 60s
+05:54:40 | INFO |    ♻️  Auto-redeemer: DISABLED
+05:54:40 | INFO |    💰 Target trade: ~$1.10 (actual $1-3 due to whole shares)
+05:54:40 | INFO |    📊 Max position: $10.0 per market
+05:54:40 | INFO |    🎯 Entry filter: 5%-95% only
+05:54:40 | INFO |    ⏱️ Order delay: 3.0s (front-run protection)
+05:54:40 | INFO |    💧 Min liquidity: $50.0
+05:54:40 | INFO |    🛑 Drawdown limit: 15.0% daily (pause 30m)
+05:54:40 | INFO |    🔄 Auto-exit: ENABLED (will sell when copied traders exit)
+05:54:40 | INFO | 🔌 Connecting WSS: wss://polygon-bor-rpc.publicnode.com...
+05:54:40 | INFO | 💓 Heartbeat started (interval: 60s)
+05:54:40 | INFO | Successfully subscribed to subscription:
+    label: LogsSubscription('logs', {'address': '0x4D97DCd97eC945f40cF65F87097ACe5EA0476045'})
+    id: 0xef192a570d85cce55517dc8de4cacd38
+05:54:40 | INFO | ✅ WSS Connected & Subscribed (sub_id: 0xef192a570d85cce55517dc8de4cacd38)
+05:54:45 | INFO | 🎯 MATCH: slimjoe (BUY)
+05:54:45 | INFO | 🔔 SIGNAL: slimjoe | BUY 213.1 shares | Royer vs. Fritz: Match O/U 36.5...
+05:54:45 | INFO | ⚙️ Processing: BUY for Royer vs. Fritz: Match O/U 36.... (from slimjoe)
+05:54:45 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=81247541159089937713973942321999658686272655977710880212370340122329338682601 "HTTP/2 200 OK"
+05:54:45 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:54:53 | INFO | 🎯 MATCH: slimjoe (BUY)
+05:54:53 | INFO | 🔔 SIGNAL: slimjoe | BUY 228.0 shares | Australian Open Women's: Sorana Cirstea ...
+05:54:53 | INFO | ⚙️ Processing: BUY for Australian Open Women's: Soran... (from slimjoe)
+05:54:53 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=66406380801952628164327947501961153257247509790658812368502250896493047538363 "HTTP/2 200 OK"
+05:54:53 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:54:54 | INFO | 🎯 MATCH: slimjoe (BUY)
+05:54:55 | INFO | 🔔 SIGNAL: slimjoe | BUY 8.0 shares | Set Handicap: Cirstea (-1.5) vs Lys (+1....
+05:54:55 | INFO | ⚙️ Processing: BUY for Set Handicap: Cirstea (-1.5) v... (from slimjoe)
+05:54:55 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=4743228463952465323631485819385103429841931699397876785117421350327578906584 "HTTP/2 200 OK"
+05:54:55 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:55:03 | INFO | 🎯 MATCH: Rawdy (BUY)
+05:55:03 | INFO | 🔔 SIGNAL: Rawdy | BUY 243.1 shares | Australian Open Men's: Rei Sakamoto vs R...
+05:55:03 | INFO | ⚙️ Processing: BUY for Australian Open Men's: Rei Sak... (from Rawdy)
+05:55:03 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=85643567206324630076512358492195997696214011292026883993654563422700156944438 "HTTP/2 200 OK"
+05:55:03 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:55:40 | INFO | 💓 HEARTBEAT [05:55:40] | Uptime: 0h 1m 2s | Matches: 4 | Traders: 2/706 | Orders: 0✓ 0✗ 4⏭️ | Last: 37s ago
+05:55:40 | INFO |    🟢 Daily P&L: +0.0% ($+0.00) | Mirrored positions: 0
+05:55:40 | INFO |    ⏭️ Skipped: 4 late entry | 0 illiquid | 0 drawdown
+05:55:40 | INFO |    📊 Recent traders: Rawdy, slimjoe
+05:55:46 | INFO | 🎯 MATCH: LCB1 (BUY)
+05:55:47 | INFO | 🔔 SIGNAL: LCB1 | BUY 8.1 shares | Will the Oklahoma City Thunder win the 2...
+05:55:47 | INFO | ⚙️ Processing: BUY for Will the Oklahoma City Thunder... (from LCB1)
+05:55:47 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=49500299856831034491021962156746701298730459370557900271970866855042624695770 "HTTP/2 200 OK"
+05:55:47 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:55:50 | INFO | 🎯 MATCH: 0x336151559E8C8b048D (BUY)
+05:55:51 | INFO | 🔔 SIGNAL: 0x336151559E8C8b048D | BUY 1612.9 shares | Patriots vs. Broncos...
+05:55:51 | INFO | ⚙️ Processing: BUY for Patriots vs. Broncos... (from 0x336151559E8C8b048D)
+05:55:51 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=93940441597806605185863489141137222482434084554690688125580295758685733000625 "HTTP/2 200 OK"
+05:55:51 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:56:17 | INFO | 🎯 MATCH: shousho (BUY)
+05:56:17 | INFO | 🔔 SIGNAL: shousho | BUY 6.3 shares | Bitcoin Up or Down - January 20, 1AM ET...
+05:56:17 | INFO | ⚙️ Processing: BUY for Bitcoin Up or Down - January 2... (from shousho)
+05:56:17 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:56:17 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:56:35 | INFO | 🎯 MATCH: 0xb3afE31e081B7f9134 (BUY)
+05:56:35 | INFO | 🔔 SIGNAL: 0xb3afE31e081B7f9134 | BUY 277.8 shares | UFC 324: Yadong vs. O'Malley (Bantamweig...
+05:56:36 | INFO | ⚙️ Processing: BUY for UFC 324: Yadong vs. O'Malley (... (from 0xb3afE31e081B7f9134)
+05:56:36 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=79728820943706629478701530637343894785716055994900043204176716648132401456317 "HTTP/2 200 OK"
+05:56:36 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:56:40 | INFO | 💓 HEARTBEAT [05:56:40] | Uptime: 0h 2m 2s | Matches: 8 | Traders: 6/706 | Orders: 0✓ 0✗ 8⏭️ | Last: 5s ago
+05:56:40 | INFO |    🟢 Daily P&L: +0.0% ($+0.00) | Mirrored positions: 0
+05:56:40 | INFO |    ⏭️ Skipped: 8 late entry | 0 illiquid | 0 drawdown
+05:56:40 | INFO |    📊 Recent traders: slimjoe, 0x336151559E8C8b048D, 0xb3afE31e081B7f9134, LCB1, shousho
+05:56:43 | INFO | 🎯 MATCH: shousho (BUY)
+05:56:43 | INFO | 🔔 SIGNAL: shousho | BUY 5.3 shares | Bitcoin Up or Down - January 20, 1AM ET...
+05:56:43 | INFO | ⚙️ Processing: BUY for Bitcoin Up or Down - January 2... (from shousho)
+05:56:43 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:56:43 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:56:48 | INFO | 🎯 MATCH: shousho (BUY)
+05:56:48 | INFO | 🔔 SIGNAL: shousho | BUY 5.2 shares | Bitcoin Up or Down - January 20, 1AM ET...
+05:56:48 | INFO | ⚙️ Processing: BUY for Bitcoin Up or Down - January 2... (from shousho)
+05:56:49 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:56:49 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:56:53 | INFO | 🎯 MATCH: shousho (BUY)
+05:56:53 | INFO | 🔔 SIGNAL: shousho | BUY 6.6 shares | Bitcoin Up or Down - January 20, 1AM ET...
+05:56:53 | INFO | ⚙️ Processing: BUY for Bitcoin Up or Down - January 2... (from shousho)
+05:56:53 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:56:53 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:57:26 | INFO | 🎯 MATCH: shousho (BUY)
+05:57:26 | INFO | 🔔 SIGNAL: shousho | BUY 10.6 shares | Bitcoin Up or Down - January 20, 1AM ET...
+05:57:26 | INFO | ⚙️ Processing: BUY for Bitcoin Up or Down - January 2... (from shousho)
+05:57:26 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:57:26 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:57:40 | INFO | 💓 HEARTBEAT [05:57:40] | Uptime: 0h 3m 2s | Matches: 12 | Traders: 6/706 | Orders: 0✓ 0✗ 12⏭️ | Last: 13s ago
+05:57:40 | INFO |    🟢 Daily P&L: +0.0% ($+0.00) | Mirrored positions: 0
+05:57:40 | INFO |    ⏭️ Skipped: 12 late entry | 0 illiquid | 0 drawdown
+05:57:40 | INFO |    📊 Recent traders: slimjoe, 0x336151559E8C8b048D, 0xb3afE31e081B7f9134, LCB1, shousho
+05:57:52 | INFO | 🎯 MATCH: bustnow (BUY)
+05:57:53 | INFO | 🔔 SIGNAL: bustnow | BUY 3.0 shares | Will the S&P 500 Index lose at least 5% ...
+05:57:53 | INFO | ⚙️ Processing: BUY for Will the S&P 500 Index lose at... (from bustnow)
+05:57:53 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=39207426181513444508255238549488765318625388882935848113117679412960221527039 "HTTP/2 200 OK"
+05:57:53 | INFO | ⏭️ SKIP: Late entry - price 1.00 > 0.95 (little upside)
+05:58:13 | INFO | 🎯 MATCH: Hauchn (BUY)
+05:58:13 | INFO | 🔔 SIGNAL: Hauchn | BUY 1.2 shares | Will Alphabet be the third-largest compa...
+05:58:14 | INFO | ⚙️ Processing: BUY for Will Alphabet be the third-lar... (from Hauchn)
+05:58:14 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=72600178842973638271725944961953830230252846076174911229725896497447877176848 "HTTP/2 200 OK"
+05:58:14 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:58:40 | INFO | 💓 HEARTBEAT [05:58:40] | Uptime: 0h 4m 2s | Matches: 14 | Traders: 8/706 | Orders: 0✓ 0✗ 14⏭️ | Last: 27s ago
+05:58:40 | INFO |    🟢 Daily P&L: +0.0% ($+0.00) | Mirrored positions: 0
+05:58:40 | INFO |    ⏭️ Skipped: 14 late entry | 0 illiquid | 0 drawdown
+05:58:40 | INFO |    📊 Recent traders: bustnow, 0x336151559E8C8b048D, 0xb3afE31e081B7f9134, LCB1, shousho
+05:58:59 | INFO | 🎯 MATCH: JimmyCarter (BUY)
+05:58:59 | INFO | 🔔 SIGNAL: JimmyCarter | BUY 465.6 shares | Will Drake Maye win the 2025–26 NFL MVP ...
+05:58:59 | INFO | 🎯 MATCH: JimmyCarter (BUY)
+05:58:59 | INFO | 🔔 SIGNAL: JimmyCarter | BUY 491.5 shares | Will Drake Maye win the 2025–26 NFL MVP ...
+05:59:00 | INFO | ⚙️ Processing: BUY for Will Drake Maye win the 2025–2... (from JimmyCarter)
+05:59:00 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=9444875387048561707328398243735771928876844280187072509566263132973432689266 "HTTP/2 200 OK"
+05:59:00 | INFO | ⏭️ SKIP: Late entry - price 1.00 > 0.95 (little upside)
+05:59:00 | INFO | ⚙️ Processing: BUY for Will Drake Maye win the 2025–2... (from JimmyCarter)
+05:59:00 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=9444875387048561707328398243735771928876844280187072509566263132973432689266 "HTTP/2 200 OK"
+05:59:00 | INFO | ⏭️ SKIP: Late entry - price 1.00 > 0.95 (little upside)
+05:59:01 | INFO | 🎯 MATCH: gatorr (BUY)
+05:59:01 | INFO | 🔔 SIGNAL: gatorr | BUY 5.0 shares | Rams vs. Seahawks...
+05:59:01 | INFO | ⚙️ Processing: BUY for Rams vs. Seahawks... (from gatorr)
+05:59:01 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=80683675731510456248139626451349746383703996709618622135269487159056371210374 "HTTP/2 200 OK"
+05:59:01 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:59:40 | INFO | 💓 HEARTBEAT [05:59:40] | Uptime: 0h 5m 2s | Matches: 17 | Traders: 10/706 | Orders: 0✓ 0✗ 17⏭️ | Last: 39s ago
+05:59:40 | INFO |    🟢 Daily P&L: +0.0% ($+0.00) | Mirrored positions: 0
+05:59:40 | INFO |    ⏭️ Skipped: 17 late entry | 0 illiquid | 0 drawdown
+05:59:40 | INFO |    📊 Recent traders: JimmyCarter, 0x336151559E8C8b048D, 0xb3afE31e081B7f9134, LCB1, shousho
+05:59:45 | INFO | 🎯 MATCH: newus (BUY)
+05:59:45 | INFO | 🔔 SIGNAL: newus | BUY 4.4 shares | Bitcoin Up or Down - January 20, 1:00AM-...
+05:59:45 | INFO | 🎯 MATCH: newus (BUY)
+05:59:45 | INFO | ℹ️ SKIP: Dust trade (0.49 shares)
+05:59:46 | INFO | ⚙️ Processing: BUY for Bitcoin Up or Down - January 2... (from newus)
+05:59:46 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=105995701663432888165238535809162454163840572580806483675030184483495062804554 "HTTP/2 200 OK"
+05:59:46 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)
+05:59:52 | INFO | 🎯 MATCH: newus (BUY)
+05:59:52 | INFO | 🔔 SIGNAL: newus | BUY 1.6 shares | Bitcoin Up or Down - January 20, 1:00AM-...
+05:59:52 | INFO | ⚙️ Processing: BUY for Bitcoin Up or Down - January 2... (from newus)
+05:59:52 | INFO | 🎯 MATCH: newus (BUY)
+05:59:52 | INFO | ℹ️ SKIP: Dust trade (0.18 shares)
+05:59:53 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=105995701663432888165238535809162454163840572580806483675030184483495062804554 "HTTP/2 200 OK"
+05:59:53 | INFO | ⏭️ SKIP: Late entry - price 0.99 > 0.95 (little upside)

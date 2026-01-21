@@ -1,0 +1,192 @@
+05:14:15 | INFO | ==================================================
+05:14:15 | INFO | === 🦅 POLYMARKET MIRROR BOT V9.0 ===
+05:14:15 | INFO | ==================================================
+05:14:15 | INFO | 🔄 Config Reloaded: Monitoring 706 Traders
+05:14:15 | INFO |    📋 Global settings from whitelist.json:
+05:14:15 | INFO |       sizing_mode: fixed
+05:14:15 | INFO |       fixed_amount: 1
+05:14:15 | INFO |       max_position_usdc: 5
+05:14:15 | INFO |       max_slippage: 0.035
+05:14:15 | INFO |    Sample addresses: ['0x22a9457106c1ff975540f27f4d5d6d8f5e39939f', '0xaf429dce2fb4c31e3af6549f46fd513f516a68d9', '0x86cd93526a4e7ad201ed3d1c6f2647b61837504c']
+05:14:15 | INFO | ✅ POA middleware injected
+05:14:16 | ERROR | Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000156E95F4980>
+05:15:25 | INFO | 🌐 Using public WSS: wss://polygon-bor-rpc.publicnode.com
+05:15:25 | INFO | ==================================================
+05:15:25 | INFO | === 🦅 POLYMARKET MIRROR BOT V9.0 ===
+05:15:25 | INFO | ==================================================
+05:15:25 | INFO | 🔄 Config Reloaded: Monitoring 706 Traders
+05:15:25 | INFO |    📋 Global settings from whitelist.json:
+05:15:25 | INFO |       sizing_mode: fixed
+05:15:25 | INFO |       fixed_amount: 1
+05:15:25 | INFO |       max_position_usdc: 5
+05:15:25 | INFO |       max_slippage: 0.035
+05:15:25 | INFO |    Sample addresses: ['0x48bfd828ad57299231dc2e909b4928615944920e', '0x58b4659703fc571cda168bb9bfa821acd782d747', '0x134a63b764ac7b008356e8db1857db94e6b09e42']
+05:15:25 | INFO | ✅ POA middleware injected
+05:15:25 | ERROR | Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000023CB63B4980>
+05:15:44 | INFO | 🌐 Using public WSS: wss://polygon-bor-rpc.publicnode.com
+05:15:44 | INFO | ==================================================
+05:15:44 | INFO | === 🦅 POLYMARKET MIRROR BOT V9.0 ===
+05:15:44 | INFO | ==================================================
+05:15:44 | INFO | 🔄 Config Reloaded: Monitoring 706 Traders
+05:15:44 | INFO |    📋 Global settings from whitelist.json:
+05:15:44 | INFO |       sizing_mode: fixed
+05:15:44 | INFO |       fixed_amount: 1
+05:15:44 | INFO |       max_position_usdc: 5
+05:15:44 | INFO |       max_slippage: 0.035
+05:15:44 | INFO |    Sample addresses: ['0x6d3d19b71fb9289eac1a6a1886460d5a41e01243', '0x66054c0cfa4c5112d68dd63b5def887f2e2888a3', '0x8dae1dd6084ffb9ff9658ad48a25de62a6380de9']
+05:15:44 | INFO | ✅ POA middleware injected
+05:15:44 | INFO | ✅ HTTP RPC Connected
+05:15:45 | INFO | HTTP Request: POST https://clob.polymarket.com/auth/api-key "HTTP/2 400 Bad Request"
+05:15:45 | INFO | HTTP Request: GET https://clob.polymarket.com/auth/derive-api-key "HTTP/2 200 OK"
+05:15:45 | INFO | ✅ CLOB API credentials set
+05:15:45 | INFO | 📥 Syncing Portfolio Data...
+05:15:47 | INFO | 💰 On-chain USDC.e balance: $124.01
+05:15:48 | INFO | 💳 Balance: $124.01 | Positions: 57
+05:15:48 | INFO | 🚀 Starting monitoring loops...
+05:15:48 | INFO |    📋 Watching 706 addresses
+05:15:48 | INFO |    💓 Heartbeat every 60s
+05:15:48 | INFO |    ♻️  Auto-redeemer: DISABLED
+05:15:48 | INFO |    💰 GLOBAL CAP - Trade size: $1.0 per trade
+05:15:48 | INFO |    📊 GLOBAL CAP - Max position: $5.0 per market
+05:15:48 | INFO |    ⚠️  These caps override ALL whitelist.json settings!
+05:15:48 | INFO | 🔌 Connecting WSS: wss://polygon-bor-rpc.publicnode.com...
+05:15:48 | INFO | 💓 Heartbeat started (interval: 60s)
+05:15:48 | INFO | Successfully subscribed to subscription:
+    label: LogsSubscription('logs', {'address': '0x4D97DCd97eC945f40cF65F87097ACe5EA0476045'})
+    id: 0x2f7e0e0a04f1073ba899a7be2131a42c
+05:15:48 | INFO | ✅ WSS Connected & Subscribed (sub_id: 0x2f7e0e0a04f1073ba899a7be2131a42c)
+05:15:52 | INFO | 🎯 MATCH: sb911 (BUY)
+05:15:52 | INFO | 🔔 SIGNAL: sb911 | BUY 1.1 shares | Will Elon Musk post 640-659 tweets from ...
+05:15:53 | INFO | ⚙️ Processing: BUY for Will Elon Musk post 640-659 tw... (from sb911)
+05:15:53 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=28089780860422553107674346061454939401272200492292542905389200251206443947548 "HTTP/2 200 OK"
+05:15:53 | INFO | 📊 Risk Check: Cur($0.00) + New($1.00) = $1.00 (Limit: $5)
+05:15:53 | INFO | 🚀 SENDING ORDER: BUY 1.0 @ 0.9900 (Mkt: 0.9990)
+05:15:53 | INFO | HTTP Request: GET https://clob.polymarket.com/tick-size?token_id=28089780860422553107674346061454939401272200492292542905389200251206443947548 "HTTP/2 200 OK"
+05:15:54 | INFO | HTTP Request: GET https://clob.polymarket.com/neg-risk?token_id=28089780860422553107674346061454939401272200492292542905389200251206443947548 "HTTP/2 200 OK"
+05:15:54 | INFO | HTTP Request: GET https://clob.polymarket.com/fee-rate?token_id=28089780860422553107674346061454939401272200492292542905389200251206443947548 "HTTP/2 200 OK"
+05:15:54 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:15:54 | WARNING | ⚠️ Order with options failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:15:54 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:15:54 | ERROR | ❌ Order fallback also failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:16:05 | INFO | 🎯 MATCH: LCB1 (BUY)
+05:16:06 | INFO | 🔔 SIGNAL: LCB1 | BUY 3.2 shares | Will the Oklahoma City Thunder win the 2...
+05:16:07 | INFO | ⚙️ Processing: BUY for Will the Oklahoma City Thunder... (from LCB1)
+05:16:07 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=49500299856831034491021962156746701298730459370557900271970866855042624695770 "HTTP/2 200 OK"
+05:16:07 | INFO | 📥 Syncing Portfolio Data...
+05:16:09 | INFO | 💰 On-chain USDC.e balance: $124.01
+05:16:09 | INFO | 💳 Balance: $124.01 | Positions: 57
+05:16:09 | INFO | 📊 Risk Check: Cur($0.00) + New($0.99) = $0.99 (Limit: $5)
+05:16:09 | INFO | 🚀 SENDING ORDER: BUY 1.0 @ 0.9900 (Mkt: 0.9900)
+05:16:09 | INFO | HTTP Request: GET https://clob.polymarket.com/tick-size?token_id=49500299856831034491021962156746701298730459370557900271970866855042624695770 "HTTP/2 200 OK"
+05:16:09 | INFO | HTTP Request: GET https://clob.polymarket.com/neg-risk?token_id=49500299856831034491021962156746701298730459370557900271970866855042624695770 "HTTP/2 200 OK"
+05:16:09 | INFO | HTTP Request: GET https://clob.polymarket.com/fee-rate?token_id=49500299856831034491021962156746701298730459370557900271970866855042624695770 "HTTP/2 200 OK"
+05:16:09 | INFO | 🎯 MATCH: sb911 (BUY)
+05:16:09 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:16:09 | WARNING | ⚠️ Order with options failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:16:09 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:16:09 | ERROR | ❌ Order fallback also failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:16:10 | INFO | 🔔 SIGNAL: sb911 | BUY 1.1 shares | Will Elon Musk post 660-679 tweets from ...
+05:16:11 | INFO | ⚙️ Processing: BUY for Will Elon Musk post 660-679 tw... (from sb911)
+05:16:11 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=28683724465216080742849256831102573387532919103033228984807901265664033159307 "HTTP/2 200 OK"
+05:16:11 | INFO | 📊 Risk Check: Cur($0.00) + New($1.00) = $1.00 (Limit: $5)
+05:16:11 | INFO | 🚀 SENDING ORDER: BUY 1.0 @ 0.9900 (Mkt: 0.9990)
+05:16:11 | INFO | HTTP Request: GET https://clob.polymarket.com/tick-size?token_id=28683724465216080742849256831102573387532919103033228984807901265664033159307 "HTTP/2 200 OK"
+05:16:11 | INFO | HTTP Request: GET https://clob.polymarket.com/neg-risk?token_id=28683724465216080742849256831102573387532919103033228984807901265664033159307 "HTTP/2 200 OK"
+05:16:11 | INFO | HTTP Request: GET https://clob.polymarket.com/fee-rate?token_id=28683724465216080742849256831102573387532919103033228984807901265664033159307 "HTTP/2 200 OK"
+05:16:11 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:16:11 | WARNING | ⚠️ Order with options failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:16:11 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:16:12 | ERROR | ❌ Order fallback also failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:16:18 | INFO | 🎯 MATCH: shousho (BUY)
+05:16:18 | INFO | 🔔 SIGNAL: shousho | BUY 23.0 shares | Bitcoin Up or Down - January 20, 1AM ET...
+05:16:18 | INFO | ⚙️ Processing: BUY for Bitcoin Up or Down - January 2... (from shousho)
+05:16:18 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:16:18 | INFO | 📊 Risk Check: Cur($0.00) + New($0.99) = $0.99 (Limit: $5)
+05:16:18 | INFO | 🚀 SENDING ORDER: BUY 1.0 @ 0.9900 (Mkt: 0.9900)
+05:16:18 | INFO | HTTP Request: GET https://clob.polymarket.com/tick-size?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:16:19 | INFO | HTTP Request: GET https://clob.polymarket.com/neg-risk?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:16:19 | INFO | HTTP Request: GET https://clob.polymarket.com/fee-rate?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:16:19 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:16:19 | WARNING | ⚠️ Order with options failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:16:19 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:16:19 | ERROR | ❌ Order fallback also failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:16:48 | INFO | 💓 HEARTBEAT [05:16:48] | Uptime: 0h 1m 3s | Events: 16834 (15941.8/min) | Matches: 4 | Traders: 3/706 | Orders: 0✓ 4✗ | Last match: 29s ago
+05:16:48 | INFO |    📊 Recent traders: shousho, sb911, LCB1
+05:16:59 | INFO | 🎯 MATCH: shousho (BUY)
+05:16:59 | INFO | 🔔 SIGNAL: shousho | BUY 27.0 shares | Bitcoin Up or Down - January 20, 1AM ET...
+05:16:59 | INFO | ⚙️ Processing: BUY for Bitcoin Up or Down - January 2... (from shousho)
+05:16:59 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:16:59 | INFO | 📥 Syncing Portfolio Data...
+05:17:00 | INFO | 💰 On-chain USDC.e balance: $124.01
+05:17:01 | INFO | 💳 Balance: $124.01 | Positions: 57
+05:17:01 | INFO | 📊 Risk Check: Cur($0.00) + New($0.99) = $0.99 (Limit: $5)
+05:17:01 | INFO | 🚀 SENDING ORDER: BUY 1.0 @ 0.9900 (Mkt: 0.9900)
+05:17:01 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:01 | WARNING | ⚠️ Order with options failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:01 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:01 | ERROR | ❌ Order fallback also failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:21 | INFO | 🎯 MATCH: shousho (BUY)
+05:17:21 | INFO | 🔔 SIGNAL: shousho | BUY 34.0 shares | Bitcoin Up or Down - January 20, 1AM ET...
+05:17:21 | INFO | ⚙️ Processing: BUY for Bitcoin Up or Down - January 2... (from shousho)
+05:17:21 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=63099323395572855085546980289861015329280078881693474172901288135493943123364 "HTTP/2 200 OK"
+05:17:21 | INFO | 📥 Syncing Portfolio Data...
+05:17:22 | INFO | 💰 On-chain USDC.e balance: $124.01
+05:17:22 | INFO | 💳 Balance: $124.01 | Positions: 57
+05:17:22 | INFO | 📊 Risk Check: Cur($0.00) + New($0.99) = $0.99 (Limit: $5)
+05:17:22 | INFO | 🚀 SENDING ORDER: BUY 1.0 @ 0.9900 (Mkt: 0.9900)
+05:17:23 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:23 | WARNING | ⚠️ Order with options failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:23 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:23 | ERROR | ❌ Order fallback also failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:48 | INFO | 💓 HEARTBEAT [05:17:48] | Uptime: 0h 2m 3s | Events: 27202 (13229.9/min) | Matches: 6 | Traders: 3/706 | Orders: 0✓ 6✗ | Last match: 26s ago
+05:17:48 | INFO |    📊 Recent traders: shousho, sb911, LCB1
+05:17:49 | INFO | 🎯 MATCH: sb911 (BUY)
+05:17:49 | INFO | 🔔 SIGNAL: sb911 | BUY 8.7 shares | Will Elon Musk post 660-679 tweets from ...
+05:17:49 | INFO | ⚙️ Processing: BUY for Will Elon Musk post 660-679 tw... (from sb911)
+05:17:49 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=28683724465216080742849256831102573387532919103033228984807901265664033159307 "HTTP/2 200 OK"
+05:17:49 | INFO | 📥 Syncing Portfolio Data...
+05:17:49 | INFO | 🎯 MATCH: sb911 (BUY)
+05:17:49 | INFO | 🔔 SIGNAL: sb911 | BUY 8.7 shares | Will Elon Musk post 640-659 tweets from ...
+05:17:50 | INFO | 💰 On-chain USDC.e balance: $124.01
+05:17:50 | INFO | 💳 Balance: $124.01 | Positions: 57
+05:17:50 | INFO | 📊 Risk Check: Cur($0.00) + New($1.00) = $1.00 (Limit: $5)
+05:17:50 | INFO | 🚀 SENDING ORDER: BUY 1.0 @ 0.9900 (Mkt: 0.9990)
+05:17:51 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:51 | WARNING | ⚠️ Order with options failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:51 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:51 | ERROR | ❌ Order fallback also failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:51 | INFO | ⚙️ Processing: BUY for Will Elon Musk post 640-659 tw... (from sb911)
+05:17:51 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=28089780860422553107674346061454939401272200492292542905389200251206443947548 "HTTP/2 200 OK"
+05:17:51 | INFO | 📊 Risk Check: Cur($0.00) + New($1.00) = $1.00 (Limit: $5)
+05:17:51 | INFO | 🚀 SENDING ORDER: BUY 1.0 @ 0.9900 (Mkt: 0.9990)
+05:17:51 | INFO | 🎯 MATCH: 0x19974ce5980baE3d4c (BUY)
+05:17:51 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:51 | WARNING | ⚠️ Order with options failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:51 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:51 | ERROR | ❌ Order fallback also failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:51 | INFO | 🔔 SIGNAL: 0x19974ce5980baE3d4c | BUY 105.3 shares | Israel strikes Iran by January 31, 2026?...
+05:17:52 | INFO | ⚙️ Processing: BUY for Israel strikes Iran by January... (from 0x19974ce5980baE3d4c)
+05:17:52 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=34465433013244737261777301958314575283534514587255327061285941306189159190135 "HTTP/2 200 OK"
+05:17:52 | INFO | 📊 Risk Check: Cur($0.00) + New($0.99) = $0.99 (Limit: $5)
+05:17:52 | INFO | 🚀 SENDING ORDER: BUY 1.0 @ 0.9900 (Mkt: 0.9900)
+05:17:52 | INFO | HTTP Request: GET https://clob.polymarket.com/tick-size?token_id=34465433013244737261777301958314575283534514587255327061285941306189159190135 "HTTP/2 200 OK"
+05:17:52 | INFO | HTTP Request: GET https://clob.polymarket.com/neg-risk?token_id=34465433013244737261777301958314575283534514587255327061285941306189159190135 "HTTP/2 200 OK"
+05:17:52 | INFO | HTTP Request: GET https://clob.polymarket.com/fee-rate?token_id=34465433013244737261777301958314575283534514587255327061285941306189159190135 "HTTP/2 200 OK"
+05:17:52 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:52 | WARNING | ⚠️ Order with options failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:53 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:53 | ERROR | ❌ Order fallback also failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:55 | INFO | 🎯 MATCH: LCB1 (BUY)
+05:17:55 | INFO | 🔔 SIGNAL: LCB1 | BUY 21.0 shares | Will the Oklahoma City Thunder win the 2...
+05:17:55 | INFO | ⚙️ Processing: BUY for Will the Oklahoma City Thunder... (from LCB1)
+05:17:55 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=49500299856831034491021962156746701298730459370557900271970866855042624695770 "HTTP/2 200 OK"
+05:17:55 | INFO | 📊 Risk Check: Cur($0.00) + New($0.99) = $0.99 (Limit: $5)
+05:17:55 | INFO | 🚀 SENDING ORDER: BUY 1.0 @ 0.9900 (Mkt: 0.9900)
+05:17:55 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:55 | WARNING | ⚠️ Order with options failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:17:55 | INFO | HTTP Request: POST https://clob.polymarket.com/order "HTTP/2 400 Bad Request"
+05:17:55 | ERROR | ❌ Order fallback also failed: PolyApiException[status_code=400, error_message={'error': 'invalid amount for a marketable BUY order ($0.99), min size: $1'}]
+05:18:48 | INFO | 💓 HEARTBEAT [05:18:48] | Uptime: 0h 3m 3s | Events: 35187 (11513.0/min) | Matches: 10 | Traders: 4/706 | Orders: 0✓ 10✗ | Last match: 52s ago
+05:18:48 | INFO |    📊 Recent traders: shousho, sb911, LCB1, 0x19974ce5980baE3d4c

@@ -1,0 +1,61 @@
+01:12:49 | INFO | ==================================================
+01:12:49 | INFO | === 🦅 POLYMARKET MIRROR BOT V8.4 ===
+01:12:49 | INFO | ==================================================
+01:12:49 | INFO | 🔄 Config Reloaded: Monitoring 706 Traders
+01:12:49 | INFO |    Sample addresses: ['0xe9bcaac97f80715ac817b3900ee7ff5b4b71b5e8', '0xc42f45f0e8606fd585486ff22738352b4ead9390', '0x654dd82ce2d70ea9b1dce058ca78af6b178b61ad']
+01:12:49 | INFO | ✅ POA middleware injected
+01:12:49 | INFO | ✅ HTTP RPC Connected
+01:12:49 | INFO | HTTP Request: POST https://clob.polymarket.com/auth/api-key "HTTP/2 400 Bad Request"
+01:12:49 | INFO | HTTP Request: GET https://clob.polymarket.com/auth/derive-api-key "HTTP/2 200 OK"
+01:12:49 | INFO | ✅ CLOB API credentials set
+01:12:49 | INFO | 📥 Syncing Portfolio Data...
+01:12:51 | INFO | 💰 On-chain USDC.e balance: $127.53
+01:12:51 | INFO | 💳 Balance: $127.53 | Positions: 57
+01:12:51 | INFO | 🚀 Starting monitoring loops...
+01:12:51 | INFO |    📋 Watching 706 addresses
+01:12:51 | INFO |    💓 Heartbeat every 60s
+01:12:51 | INFO |    ♻️  Auto-redeemer: DISABLED (set ENABLE_REDEEMER=true)
+01:12:51 | INFO | 🔌 Connecting WSS: wss://polygon-mainnet.g.alchemy.com/v2/0Yt5fWpw_rm...
+01:12:51 | INFO | 💓 Heartbeat started (interval: 60s)
+01:12:51 | INFO | Successfully subscribed to subscription:
+    label: LogsSubscription('logs', {'address': '0x4D97DCd97eC945f40cF65F87097ACe5EA0476045'})
+    id: 0xe7e0c30bf0896fc91bb50eabc09d2ad9
+01:12:51 | INFO | ✅ WSS Connected & Subscribed (sub_id: 0xe7e0c30bf0896fc91bb50eabc09d2ad9)
+01:13:02 | INFO | 🎯 MATCH FOUND: 0x13ce9e71... (BUY)
+01:13:03 | INFO | 🔔 SIGNAL: 0x13ce9e... BUY 289.0 shares | Will Trump nominate Kevin Warsh as the n...
+01:13:03 | INFO | ⚙️ Processing Signal: BUY for Will Trump nominate Kevin Wars...
+01:13:03 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=51338236787729560681434534660841415073585974762690814047670810862722808070955 "HTTP/2 200 OK"
+01:13:03 | INFO | 📥 Syncing Portfolio Data...
+01:13:05 | INFO | 💰 On-chain USDC.e balance: $127.53
+01:13:05 | INFO | 💳 Balance: $127.53 | Positions: 57
+01:13:05 | INFO | 📊 Risk Check: Cur($0.00) + New($20.00) = $20.00 (Limit: $50)
+01:13:05 | INFO | 🚀 SENDING ORDER: BUY 20.2 @ 0.990 (Mkt: 0.990)
+01:13:05 | ERROR | ❌ Execution Exception: OrderArgs.__init__() got an unexpected keyword argument 'order_type'
+Traceback (most recent call last):
+  File "c:\Users\theoe\OneDrive\Documents\GitHub\Polymirror\bot_v8.py", line 699, in execute
+    order_args = OrderArgs(
+        token_id=signal.token_id,
+    ...<3 lines>...
+        order_type=OrderType.FAK
+    )
+TypeError: OrderArgs.__init__() got an unexpected keyword argument 'order_type'
+01:13:09 | INFO | 🎯 MATCH FOUND: 0xca6e9879... (BUY)
+01:13:09 | INFO | 🔔 SIGNAL: 0xca6e98... BUY 68.9 shares | Will Elon Musk post 620-639 tweets from ...
+01:13:09 | INFO | ⚙️ Processing Signal: BUY for Will Elon Musk post 620-639 tw...
+01:13:09 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=95505569578156004807305835163747039999248366014852971108131138341260525455991 "HTTP/2 200 OK"
+01:13:09 | INFO | 📊 Risk Check: Cur($0.00) + New($19.98) = $19.98 (Limit: $50)
+01:13:09 | INFO | 🚀 SENDING ORDER: BUY 20.0 @ 0.990 (Mkt: 0.999)
+01:13:09 | ERROR | ❌ Execution Exception: OrderArgs.__init__() got an unexpected keyword argument 'order_type'
+Traceback (most recent call last):
+  File "c:\Users\theoe\OneDrive\Documents\GitHub\Polymirror\bot_v8.py", line 699, in execute
+    order_args = OrderArgs(
+        token_id=signal.token_id,
+    ...<3 lines>...
+        order_type=OrderType.FAK
+    )
+TypeError: OrderArgs.__init__() got an unexpected keyword argument 'order_type'
+01:13:14 | INFO | 🎯 MATCH FOUND: 0x5c057091... (SELL)
+01:13:15 | INFO | 🔔 SIGNAL: 0x5c0570... SELL 16596.0 shares | Rams vs. Bears...
+01:13:15 | INFO | ⚙️ Processing Signal: SELL for Rams vs. Bears...
+01:13:15 | INFO | HTTP Request: GET https://clob.polymarket.com/book?token_id=58992629418217336791150527105627726520951824426003479091735536985058036672428 "HTTP/2 404 Not Found"
+01:13:15 | ERROR | ❌ Orderbook fetch failed: PolyApiException[status_code=404, error_message={'error': 'No orderbook exists for the requested token id'}]
